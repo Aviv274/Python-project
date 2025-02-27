@@ -1,0 +1,19 @@
+{
+    "tickers": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
+    "data_directory": "etl/clean",
+    "models_directory": "ml/models",
+    "scalers_directory": "ml/scalers",
+    "features_directory": "ml/features",
+    "alpha": 0.01,
+    "l1_ratio": 0.5,
+    "top_features": 20,
+    "test_size": 0.2,
+    "random_state": 42,
+    "hyperparameter_grid": {
+        "C": [0.001, 0.01, 0.1, 1, 10],
+        "penalty": ["l1", "l2"],
+        "solver": ["liblinear"]
+    },
+    "log_file": "ml/ml.log",
+    "columns_to_drop":["Date", "Fiscal Year", "Fiscal Period", "Report Date", "Publish Date", "Restated Date"]
+}
