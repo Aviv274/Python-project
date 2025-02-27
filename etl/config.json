@@ -1,0 +1,45 @@
+{
+  
+    "tickers": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
+    "data_folder":"etl/stock_data",
+    "clean_folder":"etl/clean",
+    "share_prices_cleaning_methods": {
+      "Close": "fill",
+      "Volume": "zero",
+      "Dividend": "zero"
+    },
+    "income_cleaning_methods": {
+      "SimFinId":"drop",
+      "Ticker":"drop",
+      "Revenue":"fill",
+      "Cost of Revenue": "zero",
+      "Gross Profit": "fill",
+      "Operating Expenses": "fill",
+      "Net Income": "fill",
+      "Net Income (Common)": "fill",
+      "Depreciation & Amortization": "drop",
+      "Abnormal Gains (Losses)":"fill"
+      
+    },
+    "balance_cleaning_methods": {
+      "SimFinId":"drop",
+      "Ticker":"drop",
+      "Total Assets": "fill",
+      "Total Liabilities": "fill",
+      "Retained Earnings": "fill",
+      "Share Capital & Additional Paid-In Capital": "zero",
+      "Long Term Debt": "fill",
+      "Short Term Debt": "fill"
+    },
+    "cashflow_cleaning_methods": {
+      "SimFinId":"drop",
+      "Ticker":"drop",
+      "Net Cash from Operating Activities": "fill",
+      "Dividends Paid": "fill",
+      "Net Cash from Investing Activities": "fill",
+      "Net Cash from Financing Activities": "fill",
+      "Cash from (Repurchase of) Equity": "zero",
+      "Dividends Paid":"fill"
+    }
+  }
+  
