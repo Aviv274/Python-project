@@ -16,7 +16,7 @@ class StockETL:
     """ETL pipeline for processing stock financial data."""
     
 
-    def __init__(self, data_folder="stock_data", clean_folder="clean", config_path="etl/config.json", logger=None):
+    def __init__(self,config_path="etl/config.json", logger=None):
         if logger is None:
             raise ValueError("Logger is mandatory. Please provide a valid logger instance.")
 
@@ -43,7 +43,7 @@ class StockETL:
 
     def load_data(self, ticker):
         """Loads all datasets related to a stock ticker."""
-        files = ["share_prices", "income_statement", "balance_sheet", "cash_flow"]
+        files = ["share_prices", "income_statement", "balance_sheet", "cash_flow","company"]
         try:
             return [pd.read_csv(os.path.join(self.data_folder, f"{ticker}_{file}.csv")) for file in files]
         except FileNotFoundError:
@@ -80,7 +80,7 @@ class StockETL:
             return column.fillna(0)
         return column
 
-    def merge_data(self, df_prices, df_income, df_balance, df_cashflow, ticker):
+    def merge_data(self, df_prices, df_income, df_balance, df_cashflow, df_company, ticker):
         """Merges all stock datasets and forward-fills financial data."""
         if df_prices is None:
             self.logger.warning(f"Skipping {ticker} due to missing price data.")
@@ -97,6 +97,7 @@ class StockETL:
             merged.sort_values(by="Date", inplace=True)
             merged.ffill(inplace=True)
             merged.drop(columns=["Year"], inplace=True, errors="ignore")
+            merged = merged.merge(df_company, how='cross')
 
             return self.clean_merged_columns(merged)
         except Exception:
@@ -134,10 +135,8 @@ class StockETL:
         except Exception:
             self.logger.exception(f"Error saving data for {ticker}.")
 
-    # Function to save data to CSV
     def save_data(self,df, filename):
-        # Create a folder to store data
-        output_folder = "stock_data"
+        output_folder = "etl/stock_data"
         os.makedirs(output_folder, exist_ok=True)
         filepath = os.path.join(output_folder, filename)
         df.to_csv(filepath, index=False)
@@ -150,11 +149,12 @@ class StockETL:
         self.logger.info(f"Downloading data for tickers: {tickers}")
         
         try:
-                        # Load and save share prices (Daily)
             df_prices = sf.load_shareprices(variant='daily', market='us',index=None)
             df_income = sf.load_income(variant='annual', market='us',index=None)
             df_balance = sf.load_balance(variant='annual', market='us',index=None)
             df_cashflow = sf.load_cashflow(variant='annual', market='us', index=None)
+            df_company = sf.load_companies(market="us",index=None)
+            #Need to add compenies
             for ticker in tickers:
                 df_ticker = df_prices[df_prices[TICKER] == ticker]
                 self.save_data(df_ticker, f"{ticker}_share_prices.csv")
@@ -164,6 +164,8 @@ class StockETL:
                 self.save_data(df_ticker, f"{ticker}_balance_sheet.csv")
                 df_ticker = df_cashflow[df_cashflow[TICKER] == ticker]
                 self.save_data(df_ticker, f"{ticker}_cash_flow.csv")
+                df_ticker = df_company[df_company[TICKER] == ticker]
+                self.save_data(df_ticker, f"{ticker}_company.csv")
                 
         except Exception as e:
             self.logger.error(f"Error downloading data for {ticker}: {str(e)}")
@@ -192,12 +194,13 @@ def main():
     income_methods = etl.config.get("income_cleaning_methods", {})
     balance_methods = etl.config.get("balance_cleaning_methods", {})
     cashflow_methods = etl.config.get("cashflow_cleaning_methods", {})
+    company_methods = etl.config.get("company_cleaning_methods", {})
     etl.download_data()
     
     for ticker in tickers:
         logger.info(f"Processing {ticker}...")
 
-        df_prices, df_income, df_balance, df_cashflow = etl.load_data(ticker)
+        df_prices, df_income, df_balance, df_cashflow, df_company = etl.load_data(ticker)
         if df_prices is None:
             logger.warning(f"Skipping {ticker} due to missing essential data.")
             continue
@@ -206,8 +209,9 @@ def main():
         df_income = etl.clean_data(df_income, income_methods)
         df_balance = etl.clean_data(df_balance, balance_methods)
         df_cashflow = etl.clean_data(df_cashflow, cashflow_methods)
+        df_company = etl.clean_data(df_company,company_methods)
 
-        df_merged = etl.merge_data(df_prices, df_income, df_balance, df_cashflow, ticker)
+        df_merged = etl.merge_data(df_prices, df_income, df_balance, df_cashflow,df_company, ticker)
         if df_merged is None:
             logger.warning(f"Skipping {ticker} due to failed merge.")
             continue

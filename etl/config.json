@@ -1,6 +1,7 @@
 {
   
-    "tickers": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
+    "tickers1": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
+    "tickers": ["AAPL"],
     "data_folder":"etl/stock_data",
     "clean_folder":"etl/clean",
     "share_prices_cleaning_methods": {
@@ -40,6 +41,16 @@
       "Net Cash from Financing Activities": "fill",
       "Cash from (Repurchase of) Equity": "zero",
       "Dividends Paid":"fill"
+    },
+
+    "company_cleaning_methods": {
+      "SimFinId":"drop",
+      "Business Summary":"drop",
+      "Market":"drop",
+      "Main Currency":"drop",
+      "ISIN":"drop",
+      "Company Name":"drop"
+
     }
   }
   
