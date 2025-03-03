@@ -41,7 +41,8 @@ python ml/reg_model.py
 The required Python libraries are listed in `requirements.txt`.
 
 ## Contributors
-- Your Name
+- Group mamaber name 
+- 
 
 ## License
 This project is licensed under the MIT License.
