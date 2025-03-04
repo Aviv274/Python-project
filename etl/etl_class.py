@@ -5,18 +5,35 @@ import simfin as sf
 from simfin.names import *
 import logging
 
-
-# Set your SimFin API Key (Replace with your actual API key)
+# Set your SimFin API Key
 sf.set_api_key('339da715-7249-4c7b-9e0e-a30eef1fdf6b')
 
 # Set local data directory (for caching)
 sf.set_data_dir('etl/simfin_data/')
 
 class StockETL:
-    """ETL pipeline for processing stock financial data."""
-    
+    """
+    ETL pipeline for processing stock financial data.
 
-    def __init__(self,config_path="etl/config.json", logger=None):
+    Attributes:
+        logger (logging.Logger): Logger instance for recording events.
+        config_path (str): Path to the configuration file. Defaults to 'etl/config.json'.
+        config (dict): Dictionary holding the configuration settings.
+        data_folder (str): Path to the folder containing raw data files.
+        clean_folder (str): Path to the folder where cleaned data will be saved.
+    """
+
+    def __init__(self, config_path="etl/config.json", logger=None):
+        """
+        Initializes StockETL with a logger and configuration.
+
+        Args:
+            config_path (str): Path to the configuration file.
+            logger (logging.Logger): Logger instance.
+
+        Raises:
+            ValueError: If no logger instance is provided.
+        """
         if logger is None:
             raise ValueError("Logger is mandatory. Please provide a valid logger instance.")
 
@@ -25,11 +42,17 @@ class StockETL:
         self.config = self.load_config()
         self.data_folder = str(self.config.get("data_folder"))
         self.clean_folder = str(self.config.get("clean_folder"))
+        self.output_folder = str(self.config.get("output_folder"))
         os.makedirs(self.clean_folder, exist_ok=True)
         self.logger.info("StockETL instance initialized.")
 
     def load_config(self):
-        """Loads the configuration file."""
+        """
+        Loads the configuration file.
+
+        Returns:
+            dict: Configuration settings, or an empty dictionary if loading fails.
+        """
         if not os.path.exists(self.config_path):
             self.logger.warning("Config file not found! Using default settings.")
             return {}
@@ -42,8 +65,16 @@ class StockETL:
             return {}
 
     def load_data(self, ticker):
-        """Loads all datasets related to a stock ticker."""
-        files = ["share_prices", "income_statement", "balance_sheet", "cash_flow","company"]
+        """
+        Loads share prices, income statement, balance sheet, and cash flow data for a given ticker.
+
+        Args:
+            ticker (str): Stock ticker symbol.
+
+        Returns:
+            list: List of pandas DataFrames containing the loaded data, or a list of None values if loading fails.
+        """
+        files = ["share_prices", "income_statement", "balance_sheet", "cash_flow", "company"]
         try:
             return [pd.read_csv(os.path.join(self.data_folder, f"{ticker}_{file}.csv")) for file in files]
         except FileNotFoundError:
@@ -52,10 +83,19 @@ class StockETL:
             self.logger.warning(f"Empty CSV files for {ticker}. Skipping.")
         except Exception:
             self.logger.exception(f"Error loading data for {ticker}.")
-        return [None] * 4
+        return [None] * 5  # Return a list of 5 None values to match the expected number of datasets
 
     def clean_data(self, df, column_methods):
-        """Cleans a dataset based on configuration rules."""
+        """
+        Cleans a dataset based on the provided cleaning methods.
+
+        Args:
+            df (pd.DataFrame): DataFrame to be cleaned.
+            column_methods (dict): Dictionary specifying cleaning methods for each column.
+
+        Returns:
+            pd.DataFrame: Cleaned DataFrame, or the original DataFrame if cleaning fails.
+        """
         if df is None:
             return None
         try:
@@ -70,9 +110,18 @@ class StockETL:
             return df
 
     def apply_cleaning_method(self, column, method):
-        """Applies a specific cleaning method to a column."""
+        """
+        Applies a specific cleaning method to a column.
+
+        Args:
+            column (pd.Series): Column to be cleaned.
+            method (str): Cleaning method to apply.
+
+        Returns:
+            pd.Series: Cleaned column.
+        """
         if method == "fill":
-            column=column.ffill()
+            column = column.ffill()
             return column.bfill()
         elif method == "drop":
             return None
@@ -81,7 +130,20 @@ class StockETL:
         return column
 
     def merge_data(self, df_prices, df_income, df_balance, df_cashflow, df_company, ticker):
-        """Merges all stock datasets and forward-fills financial data."""
+        """
+        Merges all stock datasets and forward-fills financial data.
+
+        Args:
+            df_prices (pd.DataFrame): DataFrame containing share price data.
+            df_income (pd.DataFrame): DataFrame containing income statement data.
+            df_balance (pd.DataFrame): DataFrame containing balance sheet data.
+            df_cashflow (pd.DataFrame): DataFrame containing cash flow data.
+            df_company (pd.DataFrame): DataFrame containing company data.
+            ticker (str): Stock ticker symbol.
+
+        Returns:
+            pd.DataFrame: Merged DataFrame, or None if merging fails.
+        """
         if df_prices is None:
             self.logger.warning(f"Skipping {ticker} due to missing price data.")
             return None
@@ -105,7 +167,15 @@ class StockETL:
             return None
 
     def clean_merged_columns(self, df):
-        """Removes redundant or unwanted columns from the merged dataset."""
+        """
+        Removes redundant or unwanted columns from the merged dataset.
+
+        Args:
+            df (pd.DataFrame): Merged DataFrame to be cleaned.
+
+        Returns:
+            pd.DataFrame: Cleaned DataFrame, or the original DataFrame if cleaning fails.
+        """
         try:
             drop_cols = self.config.get("drop_columns", [])
             keep_cols = set(self.config.get("keep_columns", []))
@@ -124,7 +194,13 @@ class StockETL:
             return df
 
     def save_merged_data(self, df, ticker):
-        """Saves the final merged dataset."""
+        """
+        Saves the final merged dataset.
+
+        Args:
+            df (pd.DataFrame): DataFrame to be saved.
+            ticker (str): Stock ticker symbol.
+        """
         if df is None:
             self.logger.warning(f"Skipping {ticker} due to missing data.")
             return
@@ -135,44 +211,51 @@ class StockETL:
         except Exception:
             self.logger.exception(f"Error saving data for {ticker}.")
 
-    def save_data(self,df, filename):
-        output_folder = "etl/stock_data"
-        os.makedirs(output_folder, exist_ok=True)
-        filepath = os.path.join(output_folder, filename)
+    def save_data(self, df, filename):
+        """
+        Saves a DataFrame to a CSV file.
+
+        Args:
+            df (pd.DataFrame): DataFrame to be saved.
+            filename (str): Name of the output CSV file.
+        """
+        os.makedirs(self.output_folder, exist_ok=True)
+        filepath = os.path.join(self.output_folder, filename)
         df.to_csv(filepath, index=False)
         self.logger.info(f"Saved: {filepath}")
-        
 
     def download_data(self):
-        """Downloads share prices and financial statements for configured tickers."""
+        """
+        Downloads share prices, income statements, balance sheets, cash flows, and company information
+        for the configured tickers.
+        """
         tickers = self.config.get("tickers", [])
         self.logger.info(f"Downloading data for tickers: {tickers}")
-        
+
         try:
-            df_prices = sf.load_shareprices(variant='daily', market='us',index=None)
-            df_income = sf.load_income(variant='annual', market='us',index=None)
-            df_balance = sf.load_balance(variant='annual', market='us',index=None)
+            df_prices = sf.load_shareprices(variant='daily', market='us', index=None)
+            df_income = sf.load_income(variant='annual', market='us', index=None)
+            df_balance = sf.load_balance(variant='annual', market='us', index=None)
             df_cashflow = sf.load_cashflow(variant='annual', market='us', index=None)
-            df_company = sf.load_companies(market="us",index=None)
-            #Need to add compenies
+            df_company = sf.load_companies(market="us", index=None)
+
             for ticker in tickers:
-                df_ticker = df_prices[df_prices[TICKER] == ticker]
-                self.save_data(df_ticker, f"{ticker}_share_prices.csv")
-                df_ticker = df_income[df_income[TICKER] == ticker]
-                self.save_data(df_ticker, f"{ticker}_income_statement.csv")
-                df_ticker = df_balance[df_balance[TICKER] == ticker]
-                self.save_data(df_ticker, f"{ticker}_balance_sheet.csv")
-                df_ticker = df_cashflow[df_cashflow[TICKER] == ticker]
-                self.save_data(df_ticker, f"{ticker}_cash_flow.csv")
-                df_ticker = df_company[df_company[TICKER] == ticker]
-                self.save_data(df_ticker, f"{ticker}_company.csv")
-                
+                self.save_data(df_prices[df_prices[TICKER] == ticker], f"{ticker}_share_prices.csv")
+                self.save_data(df_income[df_income[TICKER] == ticker], f"{ticker}_income_statement.csv")
+                self.save_data(df_balance[df_balance[TICKER] == ticker], f"{ticker}_balance_sheet.csv")
+                self.save_data(df_cashflow[df_cashflow[TICKER] == ticker], f"{ticker}_cash_flow.csv")
+                self.save_data(df_company[df_company[TICKER] == ticker], f"{ticker}_company.csv")
+
         except Exception as e:
             self.logger.error(f"Error downloading data for {ticker}: {str(e)}")
 
-
 def configure_global_logging():
-    """Sets up logging for the main process."""
+    """
+    Sets up logging for the main process.
+
+    Returns:
+        logging.Logger: Configured logger instance.
+    """
     logging.basicConfig(
         filename="etl/etl.log",
         filemode="a",
@@ -183,20 +266,21 @@ def configure_global_logging():
     return logging.getLogger(__name__)
 
 def main():
-    """Runs the ETL process for multiple stocks."""
+    """
+    Runs the ETL process for multiple stocks.
+    """
     logger = configure_global_logging()
     logger.info("Starting ETL process.")
 
-    
     etl = StockETL(logger=logger)
-    tickers = etl.config.get("tickers",[])
+    tickers = etl.config.get("tickers", [])
     price_methods = etl.config.get("share_prices_cleaning_methods", {})
     income_methods = etl.config.get("income_cleaning_methods", {})
     balance_methods = etl.config.get("balance_cleaning_methods", {})
     cashflow_methods = etl.config.get("cashflow_cleaning_methods", {})
     company_methods = etl.config.get("company_cleaning_methods", {})
     etl.download_data()
-    
+
     for ticker in tickers:
         logger.info(f"Processing {ticker}...")
 
@@ -209,9 +293,9 @@ def main():
         df_income = etl.clean_data(df_income, income_methods)
         df_balance = etl.clean_data(df_balance, balance_methods)
         df_cashflow = etl.clean_data(df_cashflow, cashflow_methods)
-        df_company = etl.clean_data(df_company,company_methods)
+        df_company = etl.clean_data(df_company, company_methods)
 
-        df_merged = etl.merge_data(df_prices, df_income, df_balance, df_cashflow,df_company, ticker)
+        df_merged = etl.merge_data(df_prices, df_income, df_balance, df_cashflow, df_company, ticker)
         if df_merged is None:
             logger.warning(f"Skipping {ticker} due to failed merge.")
             continue
@@ -221,8 +305,5 @@ def main():
 
     logger.info("ETL process completed successfully!")
 
-
 if __name__ == "__main__":
     main()
-
-    

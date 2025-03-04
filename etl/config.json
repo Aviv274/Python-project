@@ -1,9 +1,9 @@
 {
   
-    "tickers1": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
-    "tickers": ["AAPL"],
+    "tickers": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
     "data_folder":"etl/stock_data",
     "clean_folder":"etl/clean",
+    "output_folder":"etl/stock_data",
     "share_prices_cleaning_methods": {
       "Close": "fill",
       "Volume": "zero",
@@ -49,7 +49,8 @@
       "Market":"drop",
       "Main Currency":"drop",
       "ISIN":"drop",
-      "Company Name":"drop"
+      "Company Name":"drop",
+      "CIK":"drop"
 
     }
   }
