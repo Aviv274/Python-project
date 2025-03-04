@@ -1,6 +1,5 @@
 {
     "tickers": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
-    "tickers1":["MSFT"],
     "data_directory": "etl/clean",
     "models_directory": "ml/models",
     "scalers_directory": "ml/scalers",
