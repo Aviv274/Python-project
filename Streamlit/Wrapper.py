@@ -58,26 +58,24 @@ class PySimFin:
             self.logger.error(f"Unexpected error: {e}")
             raise
 
-    def get_financial_statement(self, ticker: str,statements: str,fyear: int) -> pd.DataFrame:
+    def get_financial_statement(self, ticker: str,statements: str, start: str, end: str) -> pd.DataFrame:
         """
         Retrieve financial statements for a given ticker within a specific time range.
         """
         try:
             url = f"{self.base_url}companies/statements/verbose"
-            if fyear == int(datetime.now().year):
-                fyear = fyear-1
-            params = {"ticker": ticker, "period":"FY","fyear":fyear, "statements": statements}
-            self.logger.info(f"Fetching financial statements {statements} for {ticker} year {fyear}")
-
+            params = {"ticker": ticker,"start": start, "end": end, "statements": statements}
+            self.logger.info(f"Fetching financial statements {statements} for {ticker} from {start} to {end}.")
             response = requests.get(url, headers=self.headers, params=params)
             response.raise_for_status()
             
             data = response.json()
-            if isinstance(data, list) and data:  # Ensure it's a non-empty list
+
+            if isinstance(data, list) and data:
                 df = pd.DataFrame(data[0]['statements'][0]['data'])
                 df['ticker'] = ticker
             else:
-                self.logger.warning(f"No data returned for {ticker} year {fyear}.")
+                self.logger.warning(f"No data returned for {ticker} year from {start} to {end}..")
                 df = pd.DataFrame()
 
             self.logger.info("Financial statements retrieved successfully.")

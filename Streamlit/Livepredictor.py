@@ -32,14 +32,24 @@ class LivePredictor:
             self.logger.info(f"Fetching data for {ticker} on {prediction_date}...")
 
             # Extract year from the prediction date
-            year = datetime.strptime(prediction_date, "%Y-%m-%d").year
+            current_year = int(datetime.strptime(prediction_date, "%Y-%m-%d").year)
+            if current_year == int(prediction_date.split("-")[0]):
+                year_on_date = int(prediction_date.split("-")[0]) -1 
+            else:
+                year_on_date = int(prediction_date.split("-")[0]) 
+            start_date = f"{year_on_date}-01-01"
+            end_date = f"{year_on_date}-12-31"
+            
 
             # Fetch share prices
             prices_df = self.simfin.get_share_prices(ticker, prediction_date, prediction_date)
             # Fetch financial statements
-            pl_df = self.simfin.get_financial_statement(ticker, "pl", year)
-            bs_df = self.simfin.get_financial_statement(ticker, "bs", year)
-            cf_df = self.simfin.get_financial_statement(ticker, "cf", year)
+            pl_df = self.simfin.get_financial_statement(ticker,"pl", start_date,end_date)
+            pl_df = pl_df[(pl_df["Fiscal Period"] == "FY") & (pl_df["Fiscal Year"] == year_on_date)]
+            bs_df = self.simfin.get_financial_statement(ticker, "bs", start_date, end_date)
+            bs_df = bs_df[(bs_df["Fiscal Period"] == "FY") & (bs_df["Fiscal Year"] == year_on_date)]
+            cf_df = self.simfin.get_financial_statement(ticker, "cf", start_date, end_date)
+            cf_df = cf_df[(cf_df["Fiscal Period"] == "FY") & (cf_df["Fiscal Year"] == year_on_date)]
 
             # Fetch company info
             company_info_df = self.simfin.get_company_info(ticker)
@@ -58,6 +68,7 @@ class LivePredictor:
                     df[col] = company_info_df[col].iloc[0]
 
             self.logger.info(f"Data successfully merged for {ticker} on {prediction_date}.")
+            df.to_csv("temp.csv")
             return df
         except Exception as e:
             self.logger.error(f"Error fetching data for {ticker}: {e}")
