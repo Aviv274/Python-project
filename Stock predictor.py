@@ -53,5 +53,5 @@ if st.sidebar.button("Fetch Data"):
         except Exception as e:
             st.error(f"Error fetching data: {e}")
             tb_str = traceback.format_exc()
-            st.text_area("Traceback Details", tb_str, height=300
+            st.text_area("Traceback Details", tb_str, height=300)
 
