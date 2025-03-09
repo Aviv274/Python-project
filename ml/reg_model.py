@@ -125,6 +125,7 @@ class LogisticRegrModel(StockPricePredictor):
             X_new = pd.DataFrame(X_new, columns=self.selected_features)
 
         # Select only the stored features
+        raise ValueError(f"x new - {X_new.columns} selected features - {self.selected_features}")
         X_new = X_new[self.selected_features]
 
         # Scale the data
