@@ -6,6 +6,9 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import os
+
+cwd = os.getcwd()  # Get current working directory
+print("Current Working Directory:", cwd)
 import json
 from imblearn.over_sampling import SMOTE
 from sklearn.ensemble import RandomForestClassifier
