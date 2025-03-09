@@ -70,7 +70,8 @@ if __name__ == "__main__":
         )
 
 
-        test_date = "2025-01-02"
-        test_date = get_last_open_market_date(logger,test_date)
-        prediction_result = predictor.predict_next_day(test_ticker, test_date)
-        print(f"Prediction for {test_ticker} on the next day for {test_date}: {prediction_result}")
+        start_date = "2023-01-01"
+        end_date = "2025-12-31"
+        #test_date = get_last_open_market_date(logger,test_date)
+        prediction_result = predictor.predict_next_day(test_ticker, start_date, end_date)
+        print(f"Prediction for {test_ticker} on the next day for {end_date}: {prediction_result}")

@@ -42,7 +42,7 @@ class PySimFin:
             response.raise_for_status()
             
             data = response.json()
-            if isinstance(data, list) and data:  # Ensure it's a non-empty list
+            if isinstance(data, list) and data: 
                 df = pd.DataFrame(data[0]['data'])
                 df['ticker'] = ticker
             else:
@@ -58,28 +58,28 @@ class PySimFin:
             self.logger.error(f"Unexpected error: {e}")
             raise
 
-    def get_financial_statement(self, ticker: str,statements: str, start: str, end: str) -> pd.DataFrame:
+    def get_financial_statement(self, ticker: str, statements: str, start: str, end: str) -> list:
         """
         Retrieve financial statements for a given ticker within a specific time range.
+        If no data is available, return an empty list.
         """
         try:
             url = f"{self.base_url}companies/statements/verbose"
-            params = {"ticker": ticker,"start": start, "end": end, "statements": statements}
+            params = {"ticker": ticker, "start": start, "end": end, "statements": statements}
             self.logger.info(f"Fetching financial statements {statements} for {ticker} from {start} to {end}.")
+
             response = requests.get(url, headers=self.headers, params=params)
             response.raise_for_status()
             
             data = response.json()
 
-            if isinstance(data, list) and data:
-                df = pd.DataFrame(data[0]['statements'][0]['data'])
-                df['ticker'] = ticker
+            if isinstance(data, list) and data and 'statements' in data[0] and data[0]['statements']:
+                self.logger.info("Financial statements retrieved successfully.")
+                return pd.DataFrame(data[0]['statements'][0]['data'])
             else:
-                self.logger.warning(f"No data returned for {ticker} year from {start} to {end}..")
-                df = pd.DataFrame()
+                self.logger.warning(f"No data found for {ticker} from {start} to {end}. Returning empty data frame.")
+                return pd.DataFrame()
 
-            self.logger.info("Financial statements retrieved successfully.")
-            return df
         except requests.exceptions.RequestException as e:
             self.logger.error(f"Error retrieving financial statements: {e}")
             raise

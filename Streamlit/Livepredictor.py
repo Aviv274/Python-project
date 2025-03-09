@@ -2,9 +2,13 @@ import json
 import joblib
 import pandas as pd
 pd.set_option('future.no_silent_downcasting', True)
-from datetime import datetime, timedelta
 from sklearn.preprocessing import StandardScaler
 from Wrapper import PySimFin
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from etl.etl_class import StockETL
+from ml.reg_model import LogisticRegrModel
 
 
 class LivePredictor:
@@ -14,6 +18,7 @@ class LivePredictor:
         """
         self.simfin = PySimFin(api_key, logger)
         self.logger = logger
+        self.etl = StockETL(logger=self.logger)
         
         self.logger.info("Loading ML model, scaler, and selected features...")
         self.model = joblib.load(model_path)
@@ -24,55 +29,64 @@ class LivePredictor:
         
         self.logger.info("StockPricePredictor initialized successfully.")
 
-    def fetch_data(self, ticker: str, prediction_date: str) -> pd.DataFrame:
+    def fetch_data(self, ticker: str, start_date: str, end_date: str) -> pd.DataFrame:
         """
-        Fetches and merges stock price data, financial statements (latest fiscal year), and company info.
+        Fetches and merges stock price data, financial statements, and company info.
+        
+        Args:
+            ticker (str): The stock ticker symbol.
+            start_date (str): The start date for fetching financial statements.
+            end_date (str): The end date for fetching financial statements.
         """
         try:
-            self.logger.info(f"Fetching data for {ticker} on {prediction_date}...")
-
-            # Extract year from the prediction date
-            current_year = int(datetime.strptime(prediction_date, "%Y-%m-%d").year)
-            if current_year == int(prediction_date.split("-")[0]):
-                year_on_date = int(prediction_date.split("-")[0]) -1 
-            else:
-                year_on_date = int(prediction_date.split("-")[0]) 
-            start_date = f"{year_on_date}-01-01"
-            end_date = f"{year_on_date}-12-31"
-            
+            self.logger.info(f"Fetching data for {ticker} from {start_date} to {end_date}...")
 
             # Fetch share prices
-            prices_df = self.simfin.get_share_prices(ticker, prediction_date, prediction_date)
+            prices_df = self.simfin.get_share_prices(ticker, start_date, end_date)
+            prices_df = self.rename_columns_to_model(prices_df,"Streamlit/mapping.json")
             # Fetch financial statements
-            pl_df = self.simfin.get_financial_statement(ticker,"pl", start_date,end_date)
-            pl_df = pl_df[(pl_df["Fiscal Period"] == "FY") & (pl_df["Fiscal Year"] == year_on_date)]
+            pl_df = self.simfin.get_financial_statement(ticker, "pl", start_date, end_date)
+            
+            if pl_df.empty:
+                start_date = f"{start_date.split("-")[0]-4}-01-01"
+                pl_df = self.simfin.get_financial_statement(ticker, "pl", start_date, end_date)        
+
+            pl_df = pl_df[pl_df["Fiscal Period"] == "FY"]
+            pl_df = self.rename_columns_to_model(pl_df,"Streamlit/mapping.json")
+            
             bs_df = self.simfin.get_financial_statement(ticker, "bs", start_date, end_date)
-            bs_df = bs_df[(bs_df["Fiscal Period"] == "FY") & (bs_df["Fiscal Year"] == year_on_date)]
+            bs_df = self.rename_columns_to_model(bs_df,"Streamlit/mapping.json")
+            
+            
             cf_df = self.simfin.get_financial_statement(ticker, "cf", start_date, end_date)
-            cf_df = cf_df[(cf_df["Fiscal Period"] == "FY") & (cf_df["Fiscal Year"] == year_on_date)]
+            cf_df = cf_df[cf_df["Fiscal Period"] == "FY"]
+            cf_df = self.rename_columns_to_model(cf_df,"Streamlit/mapping.json")
 
             # Fetch company info
             company_info_df = self.simfin.get_company_info(ticker)
+            company_info_df = self.rename_columns_to_model(company_info_df,"Streamlit/mapping.json")
+        
+            price_methods = self.etl.config.get("share_prices_cleaning_methods", {})
+            income_methods = self.etl.config.get("income_cleaning_methods", {})
+            balance_methods = self.etl.config.get("balance_cleaning_methods", {})
+            cashflow_methods = self.etl.config.get("cashflow_cleaning_methods", {})
+            company_methods = self.etl.config.get("company_cleaning_methods", {})
 
-            # Merge datasets
-            df = prices_df.merge(pl_df, on=["ticker"], how="left")
-            df = df.merge(bs_df, on=["ticker"], how="left")
-            df = df.merge(cf_df, on=["ticker"], how="left")
 
-            df = df[[col for col in df.columns if not col.endswith("_y")]]
-            df.columns = [col.replace("_x", "") for col in df.columns]
+            df_prices = self.etl.clean_data(prices_df, price_methods)
+            df_income = self.etl.clean_data(pl_df, income_methods)
+            df_balance = self.etl.clean_data(bs_df, balance_methods)
+            df_cashflow = self.etl.clean_data(cf_df, cashflow_methods)
+            df_company = self.etl.clean_data(company_info_df, company_methods)
 
-            # Add company info
-            if not company_info_df.empty:
-                for col in company_info_df.columns:
-                    df[col] = company_info_df[col].iloc[0]
+            df_merged = self.etl.merge_data(df_prices, df_income, df_balance, df_cashflow, df_company, ticker)
 
-            self.logger.info(f"Data successfully merged for {ticker} on {prediction_date}.")
-            df.to_csv("temp.csv")
-            return df
+            self.logger.info(f"Data successfully merged for {ticker} from {start_date} to {end_date}.")
+            df_merged.to_csv("temp.csv")
+            return df_merged
         except Exception as e:
             self.logger.error(f"Error fetching data for {ticker}: {e}")
-            raise
+        raise
 
     def preprocess_data(self, df: pd.DataFrame) -> pd.DataFrame:
         """
@@ -81,7 +95,6 @@ class LivePredictor:
         try:
             self.logger.info("Preprocessing data...")
             # Select required features
-
             df = df[self.selected_features]
 
             # Handle missing values
@@ -95,28 +108,32 @@ class LivePredictor:
             self.logger.error(f"Error during preprocessing: {e}")
             raise
 
-    def predict_next_day(self, ticker: str, prediction_date: str) -> str:
+    def predict_next_day(self, ticker: str, start_date: str, end_date: str) -> str:
         """
-        Predicts if the stock price will increase the day after the given date.
+        Predicts if the stock price will increase or decrease based on the given date range.
+
+        Args:
+            ticker (str): The stock ticker symbol.
+            start_date (str): The start date for fetching data (format: "YYYY-MM-DD").
+            end_date (str): The end date for fetching data (format: "YYYY-MM-DD").
+
+        Returns:
+            str: "Increase" or "Decrease" prediction based on the provided data.
         """
         try:
-            # Convert prediction date to datetime object
-            prediction_date_dt = datetime.strptime(prediction_date, "%Y-%m-%d")
-            next_day = (prediction_date_dt + timedelta(days=1)).strftime("%Y-%m-%d")
-
             # Fetch and preprocess data
-            df = self.fetch_data(ticker, prediction_date)
-            df = self.rename_columns_to_model(df,"Streamlit/mapping.json")
+            df = self.fetch_data(ticker, start_date, end_date)
+            #df = self.rename_columns_to_model(df, "Streamlit/mapping.json")
             processed_data = self.preprocess_data(df)
 
             # Make prediction (only the last row is needed)
             prediction = self.model.predict(processed_data[-1].reshape(1, -1))
 
             result = "Increase" if prediction[0] == 1 else "Decrease"
-            self.logger.info(f"Prediction for {ticker} on {next_day}: {result}")
+            self.logger.info(f"Prediction for {ticker} based on data from {start_date} to {end_date}: {result}")
             return result
         except Exception as e:
-            self.logger.error(f"Error predicting stock price movement for {ticker} on {next_day}: {e}")
+            self.logger.error(f"Error predicting stock price movement for {ticker} from {start_date} to {end_date}: {e}")
             raise
 
     def load_column_mapping(self,json_path: str) -> dict:
