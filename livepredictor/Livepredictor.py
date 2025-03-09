@@ -2,16 +2,12 @@ import json
 from datetime import datetime, timedelta
 import pandas as pd
 pd.set_option('future.no_silent_downcasting', True)
-import os
-
-cwd = os.getcwd()  # Get current working directory
-print("Current Working Directory:", cwd)
 from sklearn.preprocessing import StandardScaler
 import sys
 import os
 from .Wrapper import PySimFin
-#sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from ml.reg_model import LogisticRegrModel,load_config
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from etl.etl_class import StockETL
 
 class LivePredictor:
