@@ -1,11 +1,12 @@
 import streamlit as st
 import logging
 from livepredictor.Livepredictor import LivePredictor
+from io import StringIO
 
 def configure_global_logging(file_path):
     """Sets up logging for the main process using config."""
     logging.basicConfig(
-        filename=file_path,
+        filename=StringIO(),
         filemode="a",
         format="%(asctime)s - %(levelname)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
