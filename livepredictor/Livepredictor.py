@@ -2,6 +2,10 @@ import json
 from datetime import datetime, timedelta
 import pandas as pd
 pd.set_option('future.no_silent_downcasting', True)
+import os
+
+cwd = os.getcwd()  # Get current working directory
+print("Current Working Directory:", cwd)
 from sklearn.preprocessing import StandardScaler
 import sys
 import os
