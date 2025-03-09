@@ -1,6 +1,7 @@
 {
   
     "tickers": ["AAPL", "GOOG", "AMZN", "MSFT", "NVDA"],
+    "tickers1": ["NVDA"],
     "data_folder":"etl/stock_data",
     "clean_folder":"etl/clean",
     "output_folder":"etl/stock_data",
@@ -17,9 +18,10 @@
       "Gross Profit": "fill",
       "Operating Expenses": "fill",
       "Net Income": "fill",
+      "Interest Expense, Net": "drop",
       "Net Income (Common)": "fill",
       "Depreciation & Amortization": "drop",
-      "Abnormal Gains (Losses)":"fill"
+      "Abnormal Gains (Losses)":"drop"
       
     },
     "balance_cleaning_methods": {

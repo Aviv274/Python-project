@@ -98,13 +98,27 @@ class StockETL:
         """
         if df is None:
             return None
+        
         try:
+            cols_to_drop = []  # Store columns that should be dropped
             for col, method in column_methods.items():
-                if col in df.columns:
-                    df[col] = self.apply_cleaning_method(df[col], method)
 
+                if col in df.columns:
+                    cleaned_col = self.apply_cleaning_method(df[col], method)
+                    if cleaned_col is None:
+                        cols_to_drop.append(col)  # Mark column for dropping
+                    else:
+                        df[col] = cleaned_col  # Assign cleaned column
+
+            # Drop columns that were marked for removal
+            df.drop(columns=cols_to_drop, inplace=True)
+
+
+            # Remove completely empty columns (redundant check after drop)
             df.dropna(axis=1, how="all", inplace=True)
+
             return df.drop_duplicates()
+        
         except Exception:
             self.logger.exception("Error cleaning data.")
             return df
