@@ -3,8 +3,10 @@ joblib==1.4.2
 numpy==2.2.3
 pandas==2.2.3
 pandas_market_calendars==4.6.1
+plotly==6.0.0
 pmdarima==2.0.4
 Requests==2.32.3
 scikit_learn==1.6.1
 simfin==1.0.1
 statsmodels==0.14.4
+streamlit==1.41.1
