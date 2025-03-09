@@ -1,0 +1,2235 @@
+2025-03-01 09:30:56 - INFO - Selected features for AAPL: ['Net Income (Common)', 'Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Operating Income (Loss)', 'Net Change in Cash', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-01 09:33:35 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+2025-03-01 09:33:35 - INFO - Best Cross-Validation Score: 0.5956
+2025-03-01 09:33:36 - INFO - Model training complete for AAPL.
+2025-03-01 09:33:36 - INFO - Model Accuracy: 0.4637
+2025-03-01 09:33:36 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.44      0.54      0.49       116
+           1       0.50      0.39      0.44       132
+
+    accuracy                           0.46       248
+   macro avg       0.47      0.47      0.46       248
+weighted avg       0.47      0.46      0.46       248
+
+2025-03-01 09:33:36 - INFO - Confusion Matrix:
+[[63 53]
+ [80 52]]
+2025-03-01 09:33:36 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-01 09:33:36 - INFO - [Net Income (Common)                                9.699500e+10
+Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Operating Income (Loss)                            1.143010e+11
+Net Change in Cash                                 5.760000e+09
+High                                               1.825700e+02
+Close                                              1.807500e+02
+Open                                               1.812700e+02
+Short Term Debt                                    1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-01 09:33:36 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-01 09:33:36 - INFO - Selected features for GOOG: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-01 09:34:22 - INFO - Selected features for AAPL: ['Net Income (Common)', 'Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Operating Income (Loss)', 'Net Change in Cash', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-01 09:34:45 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+2025-03-01 09:34:45 - INFO - Best Cross-Validation Score: 0.5956
+2025-03-01 09:34:45 - INFO - Model training complete for AAPL.
+2025-03-01 09:34:45 - INFO - Model Accuracy: 0.4637
+2025-03-01 09:34:45 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.44      0.54      0.49       116
+           1       0.50      0.39      0.44       132
+
+    accuracy                           0.46       248
+   macro avg       0.47      0.47      0.46       248
+weighted avg       0.47      0.46      0.46       248
+
+2025-03-01 09:34:45 - INFO - Confusion Matrix:
+[[63 53]
+ [80 52]]
+2025-03-01 09:34:45 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-01 09:34:45 - INFO - [Net Income (Common)                                9.699500e+10
+Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Operating Income (Loss)                            1.143010e+11
+Net Change in Cash                                 5.760000e+09
+High                                               1.825700e+02
+Close                                              1.807500e+02
+Open                                               1.812700e+02
+Short Term Debt                                    1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-01 09:34:45 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-01 09:34:45 - INFO - Selected features for GOOG: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-01 09:34:54 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:34:54 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-01 09:34:54 - INFO - Model training complete for GOOG.
+2025-03-01 09:34:54 - INFO - Model Accuracy: 0.5484
+2025-03-01 09:34:54 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-01 09:34:54 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-01 09:34:54 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-01 09:34:54 - INFO - [Net Income                            7.379500e+10
+Income Tax (Expense) Benefit, Net    -1.192200e+10
+Pretax Income (Loss)                  8.571700e+10
+Abnormal Gains (Losses)              -1.697000e+09
+Pretax Income (Loss), Adj.            8.571700e+10
+Non-Operating Income (Loss)           1.424000e+09
+Net Change in Cash                    2.169000e+09
+Net Cash from Investing Activities   -2.706300e+10
+Net Change in Long Term Investment    6.734000e+09
+Change in Other                       3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-01 09:34:54 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-01 09:34:54 - INFO - Selected features for AMZN: ['Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Interest Expense, Net', 'Net Income', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-01 09:35:10 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:35:10 - INFO - Best Cross-Validation Score: 0.5507
+2025-03-01 09:35:10 - INFO - Model training complete for AMZN.
+2025-03-01 09:35:10 - INFO - Model Accuracy: 0.5363
+2025-03-01 09:35:10 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.54      0.54       127
+           1       0.52      0.54      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-01 09:35:10 - INFO - Confusion Matrix:
+[[68 59]
+ [56 65]]
+2025-03-01 09:35:10 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-01 09:35:10 - INFO - [Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Interest Expense, Net                      -2.330000e+08
+Net Income                                  3.042500e+10
+Net Change in Cash                          1.963700e+10
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-01 09:35:10 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-01 09:35:10 - INFO - Selected features for MSFT: ['Total Current Assets', 'Accounts & Notes Receivable', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-01 09:35:19 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:35:19 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-01 09:35:20 - INFO - Model training complete for MSFT.
+2025-03-01 09:35:20 - INFO - Model Accuracy: 0.5282
+2025-03-01 09:35:20 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-01 09:35:20 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-01 09:35:20 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-01 09:35:20 - INFO - [Total Current Assets                         1.842570e+11
+Accounts & Notes Receivable                  4.868800e+10
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-01 09:35:20 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-01 09:35:20 - INFO - Selected features for NVDA: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Income (Loss) from Continuing Operations', 'Net Change in Cash', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-01 09:35:29 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:35:29 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-01 09:35:29 - INFO - Model training complete for NVDA.
+2025-03-01 09:35:29 - INFO - Model Accuracy: 0.5403
+2025-03-01 09:35:29 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-01 09:35:29 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-01 09:35:29 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-01 09:35:29 - INFO - [Net Income                                  2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Abnormal Gains (Losses)                    -1.353000e+09
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Income (Loss) from Continuing Operations    2.976000e+10
+Net Change in Cash                          3.891000e+09
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-01 09:35:29 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-01 09:39:16 - INFO - Selected features for AAPL: ['Net Income (Common)', 'Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Operating Income (Loss)', 'Net Change in Cash', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-01 09:39:25 - INFO - Selected features for AAPL: ['Net Income (Common)', 'Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Operating Income (Loss)', 'Net Change in Cash', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-01 09:39:49 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+2025-03-01 09:39:49 - INFO - Best Cross-Validation Score: 0.5956
+2025-03-01 09:39:49 - INFO - Model training complete for AAPL.
+2025-03-01 09:39:49 - INFO - Model Accuracy: 0.4637
+2025-03-01 09:39:49 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.44      0.54      0.49       116
+           1       0.50      0.39      0.44       132
+
+    accuracy                           0.46       248
+   macro avg       0.47      0.47      0.46       248
+weighted avg       0.47      0.46      0.46       248
+
+2025-03-01 09:39:49 - INFO - Confusion Matrix:
+[[63 53]
+ [80 52]]
+2025-03-01 09:39:49 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-01 09:39:49 - INFO - [Net Income (Common)                                9.699500e+10
+Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Operating Income (Loss)                            1.143010e+11
+Net Change in Cash                                 5.760000e+09
+High                                               1.825700e+02
+Close                                              1.807500e+02
+Open                                               1.812700e+02
+Short Term Debt                                    1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-01 09:39:49 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-01 09:39:49 - INFO - Selected features for GOOG: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-01 09:39:58 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:39:58 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-01 09:39:59 - INFO - Model training complete for GOOG.
+2025-03-01 09:39:59 - INFO - Model Accuracy: 0.5484
+2025-03-01 09:39:59 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-01 09:39:59 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-01 09:39:59 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-01 09:39:59 - INFO - [Net Income                            7.379500e+10
+Income Tax (Expense) Benefit, Net    -1.192200e+10
+Pretax Income (Loss)                  8.571700e+10
+Abnormal Gains (Losses)              -1.697000e+09
+Pretax Income (Loss), Adj.            8.571700e+10
+Non-Operating Income (Loss)           1.424000e+09
+Net Change in Cash                    2.169000e+09
+Net Cash from Investing Activities   -2.706300e+10
+Net Change in Long Term Investment    6.734000e+09
+Change in Other                       3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-01 09:39:59 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-01 09:39:59 - INFO - Selected features for AMZN: ['Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Interest Expense, Net', 'Net Income', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-01 09:40:15 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:40:15 - INFO - Best Cross-Validation Score: 0.5507
+2025-03-01 09:40:15 - INFO - Model training complete for AMZN.
+2025-03-01 09:40:15 - INFO - Model Accuracy: 0.5363
+2025-03-01 09:40:15 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.54      0.54       127
+           1       0.52      0.54      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-01 09:40:15 - INFO - Confusion Matrix:
+[[68 59]
+ [56 65]]
+2025-03-01 09:40:15 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-01 09:40:15 - INFO - [Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Interest Expense, Net                      -2.330000e+08
+Net Income                                  3.042500e+10
+Net Change in Cash                          1.963700e+10
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-01 09:40:15 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-01 09:40:15 - INFO - Selected features for MSFT: ['Total Current Assets', 'Accounts & Notes Receivable', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-01 09:40:24 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:40:24 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-01 09:40:24 - INFO - Model training complete for MSFT.
+2025-03-01 09:40:24 - INFO - Model Accuracy: 0.5282
+2025-03-01 09:40:24 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-01 09:40:24 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-01 09:40:24 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-01 09:40:24 - INFO - [Total Current Assets                         1.842570e+11
+Accounts & Notes Receivable                  4.868800e+10
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-01 09:40:24 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-01 09:40:24 - INFO - Selected features for NVDA: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Income (Loss) from Continuing Operations', 'Net Change in Cash', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-01 09:40:33 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-01 09:40:33 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-01 09:40:33 - INFO - Model training complete for NVDA.
+2025-03-01 09:40:33 - INFO - Model Accuracy: 0.5403
+2025-03-01 09:40:33 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-01 09:40:33 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-01 09:40:33 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-01 09:40:33 - INFO - [Net Income                                  2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Abnormal Gains (Losses)                    -1.353000e+09
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Income (Loss) from Continuing Operations    2.976000e+10
+Net Change in Cash                          3.891000e+09
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-01 09:40:33 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-03 09:00:34 - INFO - Selected features for AAPL: ['Net Income (Common)', 'Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Operating Income (Loss)', 'Net Change in Cash', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-03 09:00:52 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+2025-03-03 09:00:52 - INFO - Best Cross-Validation Score: 0.5956
+2025-03-03 09:00:52 - INFO - Model training complete for AAPL.
+2025-03-03 09:00:52 - INFO - Model Accuracy: 0.4637
+2025-03-03 09:00:52 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.44      0.54      0.49       116
+           1       0.50      0.39      0.44       132
+
+    accuracy                           0.46       248
+   macro avg       0.47      0.47      0.46       248
+weighted avg       0.47      0.46      0.46       248
+
+2025-03-03 09:00:52 - INFO - Confusion Matrix:
+[[63 53]
+ [80 52]]
+2025-03-03 09:00:52 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-03 09:00:52 - INFO - [Net Income (Common)                                9.699500e+10
+Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Operating Income (Loss)                            1.143010e+11
+Net Change in Cash                                 5.760000e+09
+High                                               1.825700e+02
+Close                                              1.807500e+02
+Open                                               1.812700e+02
+Short Term Debt                                    1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-03 09:00:52 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-03 09:00:52 - INFO - Selected features for GOOG: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-03 09:00:59 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 09:00:59 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-03 09:00:59 - INFO - Model training complete for GOOG.
+2025-03-03 09:00:59 - INFO - Model Accuracy: 0.5484
+2025-03-03 09:00:59 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-03 09:00:59 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-03 09:00:59 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-03 09:00:59 - INFO - [Net Income                            7.379500e+10
+Income Tax (Expense) Benefit, Net    -1.192200e+10
+Pretax Income (Loss)                  8.571700e+10
+Abnormal Gains (Losses)              -1.697000e+09
+Pretax Income (Loss), Adj.            8.571700e+10
+Non-Operating Income (Loss)           1.424000e+09
+Net Change in Cash                    2.169000e+09
+Net Cash from Investing Activities   -2.706300e+10
+Net Change in Long Term Investment    6.734000e+09
+Change in Other                       3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-03 09:00:59 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-03 09:00:59 - INFO - Selected features for AMZN: ['Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Interest Expense, Net', 'Net Income', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-03 09:01:12 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 09:01:12 - INFO - Best Cross-Validation Score: 0.5507
+2025-03-03 09:01:12 - INFO - Model training complete for AMZN.
+2025-03-03 09:01:12 - INFO - Model Accuracy: 0.5363
+2025-03-03 09:01:12 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.54      0.54       127
+           1       0.52      0.54      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-03 09:01:12 - INFO - Confusion Matrix:
+[[68 59]
+ [56 65]]
+2025-03-03 09:01:12 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-03 09:01:12 - INFO - [Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Interest Expense, Net                      -2.330000e+08
+Net Income                                  3.042500e+10
+Net Change in Cash                          1.963700e+10
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-03 09:01:12 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-03 09:01:12 - INFO - Selected features for MSFT: ['Total Current Assets', 'Accounts & Notes Receivable', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-03 09:01:19 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 09:01:19 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-03 09:01:19 - INFO - Model training complete for MSFT.
+2025-03-03 09:01:19 - INFO - Model Accuracy: 0.5282
+2025-03-03 09:01:19 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-03 09:01:19 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-03 09:01:19 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-03 09:01:19 - INFO - [Total Current Assets                         1.842570e+11
+Accounts & Notes Receivable                  4.868800e+10
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-03 09:01:19 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-03 09:01:19 - INFO - Selected features for NVDA: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Income (Loss) from Continuing Operations', 'Net Change in Cash', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-03 09:01:27 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 09:01:27 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-03 09:01:27 - INFO - Model training complete for NVDA.
+2025-03-03 09:01:27 - INFO - Model Accuracy: 0.5403
+2025-03-03 09:01:27 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-03 09:01:27 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-03 09:01:27 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-03 09:01:27 - INFO - [Net Income                                  2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Abnormal Gains (Losses)                    -1.353000e+09
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Income (Loss) from Continuing Operations    2.976000e+10
+Net Change in Cash                          3.891000e+09
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-03 09:01:27 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-03 10:01:21 - INFO - Selected features for AAPL: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Net Income (Common)', 'CIK', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-03 10:01:43 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 10:01:43 - INFO - Best Cross-Validation Score: 0.5916
+2025-03-03 10:01:43 - INFO - Model training complete for AAPL.
+2025-03-03 10:01:43 - INFO - Model Accuracy: 0.4839
+2025-03-03 10:01:43 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.53      0.49       116
+           1       0.52      0.44      0.48       132
+
+    accuracy                           0.48       248
+   macro avg       0.49      0.49      0.48       248
+weighted avg       0.49      0.48      0.48       248
+
+2025-03-03 10:01:43 - INFO - Confusion Matrix:
+[[62 54]
+ [74 58]]
+2025-03-03 10:01:43 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-03 10:01:43 - INFO - [Net Income                                  9.699500e+10
+Income (Loss) from Continuing Operations    9.699500e+10
+Income Tax (Expense) Benefit, Net          -1.674100e+10
+Pretax Income (Loss)                        1.137360e+11
+Net Income (Common)                         9.699500e+10
+CIK                                         3.201930e+05
+High                                        1.825700e+02
+Close                                       1.807500e+02
+Open                                        1.812700e+02
+Short Term Debt                             1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-03 10:01:43 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-03 10:01:43 - INFO - Selected features for GOOG: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-03 10:01:53 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 10:01:53 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-03 10:01:53 - INFO - Model training complete for GOOG.
+2025-03-03 10:01:53 - INFO - Model Accuracy: 0.5484
+2025-03-03 10:01:53 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-03 10:01:53 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-03 10:01:53 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-03 10:01:53 - INFO - [Net Income                            7.379500e+10
+Income Tax (Expense) Benefit, Net    -1.192200e+10
+Pretax Income (Loss)                  8.571700e+10
+Abnormal Gains (Losses)              -1.697000e+09
+Pretax Income (Loss), Adj.            8.571700e+10
+Non-Operating Income (Loss)           1.424000e+09
+Net Change in Cash                    2.169000e+09
+Net Cash from Investing Activities   -2.706300e+10
+Net Change in Long Term Investment    6.734000e+09
+Change in Other                       3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-03 10:01:53 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-03 10:01:53 - INFO - Selected features for AMZN: ['Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Interest Expense, Net', 'Net Income', 'Net Change in Cash', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-03 10:02:09 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 10:02:09 - INFO - Best Cross-Validation Score: 0.5507
+2025-03-03 10:02:09 - INFO - Model training complete for AMZN.
+2025-03-03 10:02:09 - INFO - Model Accuracy: 0.5363
+2025-03-03 10:02:09 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.54      0.54       127
+           1       0.52      0.54      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-03 10:02:09 - INFO - Confusion Matrix:
+[[68 59]
+ [56 65]]
+2025-03-03 10:02:09 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-03 10:02:09 - INFO - [Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Interest Expense, Net                      -2.330000e+08
+Net Income                                  3.042500e+10
+Net Change in Cash                          1.963700e+10
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-03 10:02:09 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-03 10:02:09 - INFO - Selected features for MSFT: ['Total Current Assets', 'Accounts & Notes Receivable', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-03 10:02:18 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 10:02:18 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-03 10:02:18 - INFO - Model training complete for MSFT.
+2025-03-03 10:02:18 - INFO - Model Accuracy: 0.5282
+2025-03-03 10:02:18 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-03 10:02:18 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-03 10:02:18 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-03 10:02:18 - INFO - [Total Current Assets                         1.842570e+11
+Accounts & Notes Receivable                  4.868800e+10
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-03 10:02:18 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-03 10:02:18 - INFO - Selected features for NVDA: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Income (Loss) from Continuing Operations', 'Net Change in Cash', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-03 10:02:28 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-03 10:02:28 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-03 10:02:28 - INFO - Model training complete for NVDA.
+2025-03-03 10:02:28 - INFO - Model Accuracy: 0.5403
+2025-03-03 10:02:28 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-03 10:02:28 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-03 10:02:28 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-03 10:02:28 - INFO - [Net Income                                  2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Abnormal Gains (Losses)                    -1.353000e+09
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Income (Loss) from Continuing Operations    2.976000e+10
+Net Change in Cash                          3.891000e+09
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-03 10:02:28 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-04 18:22:57 - INFO - Selected features for AAPL: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Net Income (Common)', 'Number Employees', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-04 18:23:19 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-04 18:23:19 - INFO - Best Cross-Validation Score: 0.5916
+2025-03-04 18:23:19 - INFO - Model training complete for AAPL.
+2025-03-04 18:23:19 - INFO - Model Accuracy: 0.4839
+2025-03-04 18:23:19 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.53      0.49       116
+           1       0.52      0.44      0.48       132
+
+    accuracy                           0.48       248
+   macro avg       0.49      0.49      0.48       248
+weighted avg       0.49      0.48      0.48       248
+
+2025-03-04 18:23:19 - INFO - Confusion Matrix:
+[[62 54]
+ [74 58]]
+2025-03-04 18:23:19 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-04 18:23:19 - INFO - [Net Income                                  9.699500e+10
+Income (Loss) from Continuing Operations    9.699500e+10
+Income Tax (Expense) Benefit, Net          -1.674100e+10
+Pretax Income (Loss)                        1.137360e+11
+Net Income (Common)                         9.699500e+10
+Number Employees                            1.470000e+05
+High                                        1.825700e+02
+Close                                       1.807500e+02
+Open                                        1.812700e+02
+Short Term Debt                             1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-04 18:23:19 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-04 19:16:51 - INFO - Selected features for AAPL: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Net Income (Common)', 'Number Employees', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-04 19:17:15 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-04 19:17:15 - INFO - Best Cross-Validation Score: 0.5916
+2025-03-04 19:17:15 - INFO - Model training complete for AAPL.
+2025-03-04 19:17:15 - INFO - Model Accuracy: 0.4839
+2025-03-04 19:17:15 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.53      0.49       116
+           1       0.52      0.44      0.48       132
+
+    accuracy                           0.48       248
+   macro avg       0.49      0.49      0.48       248
+weighted avg       0.49      0.48      0.48       248
+
+2025-03-04 19:17:15 - INFO - Confusion Matrix:
+[[62 54]
+ [74 58]]
+2025-03-04 19:17:15 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-04 19:17:15 - INFO - [Net Income                                  9.699500e+10
+Income (Loss) from Continuing Operations    9.699500e+10
+Income Tax (Expense) Benefit, Net          -1.674100e+10
+Pretax Income (Loss)                        1.137360e+11
+Net Income (Common)                         9.699500e+10
+Number Employees                            1.470000e+05
+High                                        1.825700e+02
+Close                                       1.807500e+02
+Open                                        1.812700e+02
+Short Term Debt                             1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-04 19:17:15 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-04 19:17:15 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-04 19:17:25 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-04 19:17:25 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-04 19:17:25 - INFO - Model training complete for GOOG.
+2025-03-04 19:17:25 - INFO - Model Accuracy: 0.5484
+2025-03-04 19:17:25 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-04 19:17:25 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-04 19:17:25 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-04 19:17:25 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Abnormal Gains (Losses)                    -1.697000e+09
+Pretax Income (Loss), Adj.                  8.571700e+10
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-04 19:17:25 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-04 19:17:25 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Net Income (Common)', 'Number Employees', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-04 19:17:42 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-04 19:17:42 - INFO - Best Cross-Validation Score: 0.5452
+2025-03-04 19:17:42 - INFO - Model training complete for AMZN.
+2025-03-04 19:17:42 - INFO - Model Accuracy: 0.5363
+2025-03-04 19:17:42 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.53      0.54       127
+           1       0.52      0.55      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-04 19:17:42 - INFO - Confusion Matrix:
+[[67 60]
+ [55 66]]
+2025-03-04 19:17:42 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-04 19:17:42 - INFO - [Net Income                                  3.042500e+10
+Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Net Income (Common)                         3.042500e+10
+Number Employees                            1.298000e+06
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-04 19:17:42 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-04 19:17:42 - INFO - Selected features for MSFT: ['Accounts & Notes Receivable', 'Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-04 19:17:52 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-04 19:17:52 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-04 19:17:52 - INFO - Model training complete for MSFT.
+2025-03-04 19:17:52 - INFO - Model Accuracy: 0.5282
+2025-03-04 19:17:52 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-04 19:17:52 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-04 19:17:52 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-04 19:17:52 - INFO - [Accounts & Notes Receivable                  4.868800e+10
+Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-04 19:17:52 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-04 19:17:52 - INFO - Selected features for NVDA: ['Net Income', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Abnormal Gains (Losses)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Income (Loss) from Continuing Operations', 'Number Employees', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-04 19:18:03 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-04 19:18:03 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-04 19:18:03 - INFO - Model training complete for NVDA.
+2025-03-04 19:18:03 - INFO - Model Accuracy: 0.5403
+2025-03-04 19:18:03 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-04 19:18:03 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-04 19:18:03 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-04 19:18:03 - INFO - [Net Income                                  2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Abnormal Gains (Losses)                    -1.353000e+09
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Income (Loss) from Continuing Operations    2.976000e+10
+Number Employees                            1.897500e+04
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-04 19:18:03 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-04 19:22:57 - INFO - Selected features for AAPL: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Net Income (Common)', 'Number Employees', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-08 17:32:43 - INFO - Selected features for AAPL: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Net Income (Common)', 'Number Employees', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-08 17:33:11 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:33:11 - INFO - Best Cross-Validation Score: 0.5916
+2025-03-08 17:33:11 - INFO - Model training complete for AAPL.
+2025-03-08 17:33:11 - INFO - Model Accuracy: 0.4839
+2025-03-08 17:33:11 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.53      0.49       116
+           1       0.52      0.44      0.48       132
+
+    accuracy                           0.48       248
+   macro avg       0.49      0.49      0.48       248
+weighted avg       0.49      0.48      0.48       248
+
+2025-03-08 17:33:11 - INFO - Confusion Matrix:
+[[62 54]
+ [74 58]]
+2025-03-08 17:33:11 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-08 17:33:11 - INFO - [Net Income                                  9.699500e+10
+Income (Loss) from Continuing Operations    9.699500e+10
+Income Tax (Expense) Benefit, Net          -1.674100e+10
+Pretax Income (Loss)                        1.137360e+11
+Net Income (Common)                         9.699500e+10
+Number Employees                            1.470000e+05
+High                                        1.825700e+02
+Close                                       1.807500e+02
+Open                                        1.812700e+02
+Short Term Debt                             1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-08 17:33:11 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-08 17:33:11 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-08 17:33:23 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:33:23 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-08 17:33:23 - INFO - Model training complete for GOOG.
+2025-03-08 17:33:23 - INFO - Model Accuracy: 0.5484
+2025-03-08 17:33:23 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-08 17:33:23 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-08 17:33:23 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-08 17:33:23 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-08 17:33:23 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-08 17:33:23 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Net Income (Common)', 'Number Employees', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-08 17:33:41 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:33:41 - INFO - Best Cross-Validation Score: 0.5452
+2025-03-08 17:33:41 - INFO - Model training complete for AMZN.
+2025-03-08 17:33:41 - INFO - Model Accuracy: 0.5363
+2025-03-08 17:33:41 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.53      0.54       127
+           1       0.52      0.55      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-08 17:33:41 - INFO - Confusion Matrix:
+[[67 60]
+ [55 66]]
+2025-03-08 17:33:41 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-08 17:33:41 - INFO - [Net Income                                  3.042500e+10
+Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Net Income (Common)                         3.042500e+10
+Number Employees                            1.298000e+06
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-08 17:33:41 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-08 17:33:42 - INFO - Selected features for MSFT: ['Accounts & Notes Receivable', 'Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-08 17:33:53 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:33:53 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-08 17:33:53 - INFO - Model training complete for MSFT.
+2025-03-08 17:33:53 - INFO - Model Accuracy: 0.5282
+2025-03-08 17:33:53 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-08 17:33:53 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-08 17:33:53 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-08 17:33:53 - INFO - [Accounts & Notes Receivable                  4.868800e+10
+Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-08 17:33:53 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-08 17:33:53 - INFO - Selected features for NVDA: ['Net Income (Common)', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Net Income', 'Number Employees', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-08 17:34:05 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:34:05 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-08 17:34:05 - INFO - Model training complete for NVDA.
+2025-03-08 17:34:05 - INFO - Model Accuracy: 0.5403
+2025-03-08 17:34:05 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-08 17:34:05 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-08 17:34:05 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-08 17:34:05 - INFO - [Net Income (Common)                         2.976000e+10
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Net Income                                  2.976000e+10
+Number Employees                            1.897500e+04
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-08 17:34:05 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-08 17:36:45 - INFO - Selected features for AAPL: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Net Income (Common)', 'Number Employees', 'High', 'Close', 'Open', 'Short Term Debt']
+2025-03-08 17:37:11 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:37:11 - INFO - Best Cross-Validation Score: 0.5916
+2025-03-08 17:37:11 - INFO - Model training complete for AAPL.
+2025-03-08 17:37:11 - INFO - Model Accuracy: 0.4839
+2025-03-08 17:37:11 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.53      0.49       116
+           1       0.52      0.44      0.48       132
+
+    accuracy                           0.48       248
+   macro avg       0.49      0.49      0.48       248
+weighted avg       0.49      0.48      0.48       248
+
+2025-03-08 17:37:11 - INFO - Confusion Matrix:
+[[62 54]
+ [74 58]]
+2025-03-08 17:37:11 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-08 17:37:11 - INFO - [Net Income                                  9.699500e+10
+Income (Loss) from Continuing Operations    9.699500e+10
+Income Tax (Expense) Benefit, Net          -1.674100e+10
+Pretax Income (Loss)                        1.137360e+11
+Net Income (Common)                         9.699500e+10
+Number Employees                            1.470000e+05
+High                                        1.825700e+02
+Close                                       1.807500e+02
+Open                                        1.812700e+02
+Short Term Debt                             1.577447e+10
+Name: 1237, dtype: float64]
+2025-03-08 17:37:11 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-08 17:37:12 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-08 17:37:23 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:37:23 - INFO - Best Cross-Validation Score: 0.4555
+2025-03-08 17:37:23 - INFO - Model training complete for GOOG.
+2025-03-08 17:37:23 - INFO - Model Accuracy: 0.5484
+2025-03-08 17:37:23 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.84      0.67       135
+           1       0.51      0.19      0.28       113
+
+    accuracy                           0.55       248
+   macro avg       0.53      0.52      0.48       248
+weighted avg       0.54      0.55      0.49       248
+
+2025-03-08 17:37:23 - INFO - Confusion Matrix:
+[[114  21]
+ [ 91  22]]
+2025-03-08 17:37:23 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-08 17:37:23 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1237, dtype: float64]
+2025-03-08 17:37:23 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-08 17:37:23 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Net Income (Common)', 'Number Employees', 'Net Cash from Investing Activities', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-08 17:37:41 - INFO - Best Parameters: {'bootstrap': False, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:37:41 - INFO - Best Cross-Validation Score: 0.5452
+2025-03-08 17:37:41 - INFO - Model training complete for AMZN.
+2025-03-08 17:37:41 - INFO - Model Accuracy: 0.5363
+2025-03-08 17:37:41 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.53      0.54       127
+           1       0.52      0.55      0.53       121
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.54       248
+weighted avg       0.54      0.54      0.54       248
+
+2025-03-08 17:37:41 - INFO - Confusion Matrix:
+[[67 60]
+ [55 66]]
+2025-03-08 17:37:41 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-08 17:37:41 - INFO - [Net Income                                  3.042500e+10
+Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Net Income (Common)                         3.042500e+10
+Number Employees                            1.298000e+06
+Net Cash from Investing Activities         -4.983300e+10
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.730100e+02
+Name: 1237, dtype: float64]
+2025-03-08 17:37:41 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-08 17:37:41 - INFO - Selected features for MSFT: ['Accounts & Notes Receivable', 'Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-08 17:37:52 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:37:52 - INFO - Best Cross-Validation Score: 0.5077
+2025-03-08 17:37:52 - INFO - Model training complete for MSFT.
+2025-03-08 17:37:52 - INFO - Model Accuracy: 0.5282
+2025-03-08 17:37:52 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.55      0.65      0.60       133
+           1       0.49      0.39      0.43       115
+
+    accuracy                           0.53       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.53      0.52       248
+
+2025-03-08 17:37:52 - INFO - Confusion Matrix:
+[[86 47]
+ [70 45]]
+2025-03-08 17:37:52 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-08 17:37:52 - INFO - [Accounts & Notes Receivable                  4.868800e+10
+Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1237, dtype: float64]
+2025-03-08 17:37:52 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-08 17:37:52 - INFO - Selected features for NVDA: ['Net Income (Common)', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Net Income', 'Number Employees', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-08 17:38:03 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:38:03 - INFO - Best Cross-Validation Score: 0.5236
+2025-03-08 17:38:03 - INFO - Model training complete for NVDA.
+2025-03-08 17:38:03 - INFO - Model Accuracy: 0.5403
+2025-03-08 17:38:03 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.66      0.60       128
+           1       0.53      0.41      0.46       120
+
+    accuracy                           0.54       248
+   macro avg       0.54      0.54      0.53       248
+weighted avg       0.54      0.54      0.53       248
+
+2025-03-08 17:38:03 - INFO - Confusion Matrix:
+[[85 43]
+ [71 49]]
+2025-03-08 17:38:03 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-08 17:38:03 - INFO - [Net Income (Common)                         2.976000e+10
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                       6.090000e+08
+Net Income                                  2.976000e+10
+Number Employees                            1.897500e+04
+Net Change in Long Term Investment         -8.429000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1237, dtype: float64]
+2025-03-08 17:38:03 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-08 17:41:02 - INFO - Selected features for AAPL: ['Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property, Plant & Equipment, Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-08 17:41:26 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-08 17:41:26 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-08 17:41:26 - INFO - Model training complete for AAPL.
+2025-03-08 17:41:26 - INFO - Model Accuracy: 0.4879
+2025-03-08 17:41:26 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-08 17:41:26 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-08 17:41:26 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-08 17:41:26 - INFO - [Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Total Current Assets                               1.435660e+11
+Property, Plant & Equipment, Net                   4.371500e+10
+Non-Operating Income (Loss)                       -5.650000e+08
+Number Employees                                   1.470000e+05
+Close                                              1.732300e+02
+Open                                               1.731500e+02
+Short Term Debt                                    1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-08 17:41:26 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-08 17:41:26 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-08 17:41:38 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-08 17:41:38 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-08 17:41:39 - INFO - Model training complete for GOOG.
+2025-03-08 17:41:39 - INFO - Model Accuracy: 0.5202
+2025-03-08 17:41:39 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-08 17:41:39 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-08 17:41:39 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-08 17:41:39 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-08 17:41:39 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-08 17:41:39 - INFO - Selected features for AMZN: ['Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Net Income (Common)', 'Number Employees', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-08 17:42:00 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-08 17:42:00 - INFO - Best Cross-Validation Score: 0.5485
+2025-03-08 17:42:00 - INFO - Model training complete for AMZN.
+2025-03-08 17:42:00 - INFO - Model Accuracy: 0.5161
+2025-03-08 17:42:00 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.56      0.54       126
+           1       0.51      0.48      0.49       122
+
+    accuracy                           0.52       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.52      0.52       248
+
+2025-03-08 17:42:00 - INFO - Confusion Matrix:
+[[70 56]
+ [64 58]]
+2025-03-08 17:42:00 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-08 17:42:00 - INFO - [Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit, Net          -7.120000e+09
+Net Income (Common)                         3.042500e+10
+Number Employees                            1.298000e+06
+Low                                         1.719800e+02
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss), Adj.                  3.755700e+10
+Net Cash from Investing Activities         -4.983300e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-08 17:42:00 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-08 17:42:00 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-08 17:42:12 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:42:12 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-08 17:42:12 - INFO - Model training complete for MSFT.
+2025-03-08 17:42:12 - INFO - Model Accuracy: 0.4758
+2025-03-08 17:42:12 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-08 17:42:12 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-08 17:42:12 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-08 17:42:12 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-08 17:42:12 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-08 17:42:12 - INFO - Selected features for NVDA: ['Net Income (Common)', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Interest Expense, Net', 'Net Income', 'Number Employees', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-08 17:42:24 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 17:42:24 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-08 17:42:24 - INFO - Model training complete for NVDA.
+2025-03-08 17:42:24 - INFO - Model Accuracy: 0.5081
+2025-03-08 17:42:24 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-08 17:42:24 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-08 17:42:24 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-08 17:42:24 - INFO - [Net Income (Common)                         2.976000e+10
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Interest Expense, Net                      -2.070000e+08
+Net Income                                  2.976000e+10
+Number Employees                            1.897500e+04
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-08 17:42:24 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-08 23:23:26 - INFO - Selected features for AAPL: ['Cash Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property Plant & Equipment Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-08 23:23:51 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-08 23:23:51 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-08 23:23:51 - INFO - Model training complete for AAPL.
+2025-03-08 23:23:51 - INFO - Model Accuracy: 0.4879
+2025-03-08 23:23:51 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-08 23:23:51 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-08 23:23:51 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-08 23:23:51 - INFO - [Cash Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                       6.090840e+10
+Inventories                                       6.331000e+09
+Total Current Assets                              1.435660e+11
+Property Plant & Equipment Net                    4.371500e+10
+Non-Operating Income (Loss)                      -5.650000e+08
+Number Employees                                  1.470000e+05
+Close                                             1.732300e+02
+Open                                              1.731500e+02
+Short Term Debt                                   1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-08 23:23:51 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-08 23:23:51 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit Net', 'Pretax Income (Loss)', 'Pretax Income (Loss) Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-08 23:24:03 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-08 23:24:03 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-08 23:24:03 - INFO - Model training complete for GOOG.
+2025-03-08 23:24:03 - INFO - Model Accuracy: 0.5202
+2025-03-08 23:24:03 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-08 23:24:03 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-08 23:24:03 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-08 23:24:03 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit Net           -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss) Adj.                   8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-08 23:24:03 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-08 23:24:03 - INFO - Selected features for AMZN: ['Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit Net', 'Net Income (Common)', 'Number Employees', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss) Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-08 23:24:23 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-08 23:24:23 - INFO - Best Cross-Validation Score: 0.5485
+2025-03-08 23:24:23 - INFO - Model training complete for AMZN.
+2025-03-08 23:24:23 - INFO - Model Accuracy: 0.5161
+2025-03-08 23:24:23 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.56      0.54       126
+           1       0.51      0.48      0.49       122
+
+    accuracy                           0.52       248
+   macro avg       0.52      0.52      0.51       248
+weighted avg       0.52      0.52      0.52       248
+
+2025-03-08 23:24:23 - INFO - Confusion Matrix:
+[[70 56]
+ [64 58]]
+2025-03-08 23:24:23 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-08 23:24:23 - INFO - [Income (Loss) from Continuing Operations    3.042500e+10
+Income Tax (Expense) Benefit Net           -7.120000e+09
+Net Income (Common)                         3.042500e+10
+Number Employees                            1.298000e+06
+Low                                         1.719800e+02
+Pretax Income (Loss)                        3.755700e+10
+Pretax Income (Loss) Adj.                   3.755700e+10
+Net Cash from Investing Activities         -4.983300e+10
+Cash from (Repurchase of) Equity            0.000000e+00
+Open                                        1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-08 23:24:23 - INFO - Prediction for the next day (AMZN): [0]
+2025-03-08 23:24:23 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-08 23:24:34 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 23:24:34 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-08 23:24:34 - INFO - Model training complete for MSFT.
+2025-03-08 23:24:34 - INFO - Model Accuracy: 0.4758
+2025-03-08 23:24:34 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-08 23:24:34 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-08 23:24:34 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-08 23:24:34 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-08 23:24:34 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-08 23:24:34 - INFO - Selected features for NVDA: ['Net Income (Common)', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit Net', 'Pretax Income (Loss)', 'Pretax Income (Loss) Adj.', 'Interest Expense Net', 'Net Income', 'Number Employees', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-08 23:24:46 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-08 23:24:46 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-08 23:24:46 - INFO - Model training complete for NVDA.
+2025-03-08 23:24:46 - INFO - Model Accuracy: 0.5081
+2025-03-08 23:24:46 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-08 23:24:46 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-08 23:24:46 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-08 23:24:46 - INFO - [Net Income (Common)                         2.976000e+10
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit Net           -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss) Adj.                   3.381800e+10
+Interest Expense Net                       -2.070000e+08
+Net Income                                  2.976000e+10
+Number Employees                            1.897500e+04
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-08 23:24:46 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-09 09:49:07 - INFO - Selected features for AAPL: ['Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property, Plant & Equipment, Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-09 09:49:26 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-09 09:49:26 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-09 09:49:26 - INFO - Model training complete for AAPL.
+2025-03-09 09:49:26 - INFO - Model Accuracy: 0.4879
+2025-03-09 09:49:26 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-09 09:49:26 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-09 09:49:26 - INFO - Model saved as ml/models/AAPL_logistic_regression_model.pkl, Scaler saved as ml/scalers/AAPL_logistic_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-09 09:49:26 - INFO - [Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Total Current Assets                               1.435660e+11
+Property, Plant & Equipment, Net                   4.371500e+10
+Non-Operating Income (Loss)                       -5.650000e+08
+Number Employees                                   1.470000e+05
+Close                                              1.732300e+02
+Open                                               1.731500e+02
+Short Term Debt                                    1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-09 09:49:26 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-09 09:49:26 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-09 09:49:37 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-09 09:49:37 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-09 09:49:37 - INFO - Model training complete for GOOG.
+2025-03-09 09:49:37 - INFO - Model Accuracy: 0.5202
+2025-03-09 09:49:37 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-09 09:49:37 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-09 09:49:37 - INFO - Model saved as ml/models/GOOG_logistic_regression_model.pkl, Scaler saved as ml/scalers/GOOG_logistic_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-09 09:49:37 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-09 09:49:37 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-09 09:49:37 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Cash, Cash Equivalents & Short Term Investments', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-09 09:49:53 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-09 09:49:53 - INFO - Best Cross-Validation Score: 0.5500
+2025-03-09 09:49:53 - INFO - Model training complete for AMZN.
+2025-03-09 09:49:53 - INFO - Model Accuracy: 0.5323
+2025-03-09 09:49:53 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.60      0.57       126
+           1       0.53      0.46      0.49       122
+
+    accuracy                           0.53       248
+   macro avg       0.53      0.53      0.53       248
+weighted avg       0.53      0.53      0.53       248
+
+2025-03-09 09:49:53 - INFO - Confusion Matrix:
+[[76 50]
+ [66 56]]
+2025-03-09 09:49:53 - INFO - Model saved as ml/models/AMZN_logistic_regression_model.pkl, Scaler saved as ml/scalers/AMZN_logistic_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-09 09:49:53 - INFO - [Net Income                                         3.042500e+10
+Income (Loss) from Continuing Operations           3.042500e+10
+Income Tax (Expense) Benefit, Net                 -7.120000e+09
+Cash, Cash Equivalents & Short Term Investments    8.678000e+10
+Low                                                1.719800e+02
+Pretax Income (Loss)                               3.755700e+10
+Pretax Income (Loss), Adj.                         3.755700e+10
+Net Cash from Investing Activities                -4.983300e+10
+Cash from (Repurchase of) Equity                   0.000000e+00
+Open                                               1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-09 09:49:53 - INFO - Prediction for the next day (AMZN): [1]
+2025-03-09 09:49:53 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-09 09:50:02 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 09:50:02 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-09 09:50:02 - INFO - Model training complete for MSFT.
+2025-03-09 09:50:02 - INFO - Model Accuracy: 0.4758
+2025-03-09 09:50:02 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-09 09:50:02 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-09 09:50:02 - INFO - Model saved as ml/models/MSFT_logistic_regression_model.pkl, Scaler saved as ml/scalers/MSFT_logistic_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-09 09:50:02 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-09 09:50:02 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-09 09:50:02 - INFO - Selected features for NVDA: ['Operating Income (Loss)', 'Number Employees', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Income', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-09 09:50:11 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 09:50:11 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-09 09:50:11 - INFO - Model training complete for NVDA.
+2025-03-09 09:50:11 - INFO - Model Accuracy: 0.5081
+2025-03-09 09:50:11 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-09 09:50:11 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-09 09:50:11 - INFO - Model saved as ml/models/NVDA_logistic_regression_model.pkl, Scaler saved as ml/scalers/NVDA_logistic_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-09 09:50:11 - INFO - [Operating Income (Loss)                     3.297200e+10
+Number Employees                            1.897500e+04
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Non-Operating Income (Loss)                 8.460000e+08
+Net Income                                  2.976000e+10
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-09 09:50:11 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-09 10:33:08 - INFO - Selected features for AAPL: ['Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property, Plant & Equipment, Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-09 10:33:24 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-09 10:33:24 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-09 10:33:24 - INFO - Model training complete for AAPL.
+2025-03-09 10:33:24 - INFO - Model Accuracy: 0.4879
+2025-03-09 10:33:24 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-09 10:33:24 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-09 10:33:24 - INFO - Model saved as ml/models/AAPL_model.pkl, Scaler saved as ml/scalers/AAPL_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-09 10:33:24 - INFO - [Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Total Current Assets                               1.435660e+11
+Property, Plant & Equipment, Net                   4.371500e+10
+Non-Operating Income (Loss)                       -5.650000e+08
+Number Employees                                   1.470000e+05
+Close                                              1.732300e+02
+Open                                               1.731500e+02
+Short Term Debt                                    1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-09 10:33:24 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-09 10:33:24 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-09 10:33:33 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-09 10:33:33 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-09 10:33:33 - INFO - Model training complete for GOOG.
+2025-03-09 10:33:33 - INFO - Model Accuracy: 0.5202
+2025-03-09 10:33:33 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-09 10:33:33 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-09 10:33:33 - INFO - Model saved as ml/models/GOOG_model.pkl, Scaler saved as ml/scalers/GOOG_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-09 10:33:33 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-09 10:33:33 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-09 10:33:33 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Cash, Cash Equivalents & Short Term Investments', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-09 10:33:48 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-09 10:33:48 - INFO - Best Cross-Validation Score: 0.5500
+2025-03-09 10:33:48 - INFO - Model training complete for AMZN.
+2025-03-09 10:33:48 - INFO - Model Accuracy: 0.5323
+2025-03-09 10:33:48 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.60      0.57       126
+           1       0.53      0.46      0.49       122
+
+    accuracy                           0.53       248
+   macro avg       0.53      0.53      0.53       248
+weighted avg       0.53      0.53      0.53       248
+
+2025-03-09 10:33:48 - INFO - Confusion Matrix:
+[[76 50]
+ [66 56]]
+2025-03-09 10:33:48 - INFO - Model saved as ml/models/AMZN_model.pkl, Scaler saved as ml/scalers/AMZN_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-09 10:33:48 - INFO - [Net Income                                         3.042500e+10
+Income (Loss) from Continuing Operations           3.042500e+10
+Income Tax (Expense) Benefit, Net                 -7.120000e+09
+Cash, Cash Equivalents & Short Term Investments    8.678000e+10
+Low                                                1.719800e+02
+Pretax Income (Loss)                               3.755700e+10
+Pretax Income (Loss), Adj.                         3.755700e+10
+Net Cash from Investing Activities                -4.983300e+10
+Cash from (Repurchase of) Equity                   0.000000e+00
+Open                                               1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-09 10:33:48 - INFO - Prediction for the next day (AMZN): [1]
+2025-03-09 10:33:48 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-09 10:33:57 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 10:33:57 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-09 10:33:57 - INFO - Model training complete for MSFT.
+2025-03-09 10:33:57 - INFO - Model Accuracy: 0.4758
+2025-03-09 10:33:57 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-09 10:33:57 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-09 10:33:57 - INFO - Model saved as ml/models/MSFT_model.pkl, Scaler saved as ml/scalers/MSFT_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-09 10:33:57 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-09 10:33:57 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-09 10:33:57 - INFO - Selected features for NVDA: ['Operating Income (Loss)', 'Number Employees', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Income', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-09 10:34:05 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 10:34:05 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-09 10:34:05 - INFO - Model training complete for NVDA.
+2025-03-09 10:34:05 - INFO - Model Accuracy: 0.5081
+2025-03-09 10:34:05 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-09 10:34:05 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-09 10:34:05 - INFO - Model saved as ml/models/NVDA_model.pkl, Scaler saved as ml/scalers/NVDA_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-09 10:34:05 - INFO - [Operating Income (Loss)                     3.297200e+10
+Number Employees                            1.897500e+04
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Non-Operating Income (Loss)                 8.460000e+08
+Net Income                                  2.976000e+10
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-09 10:34:05 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-09 11:53:30 - INFO - Selected features for AAPL: ['Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property, Plant & Equipment, Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-09 11:53:46 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-09 11:53:46 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-09 11:53:46 - INFO - Model training complete for AAPL.
+2025-03-09 11:53:46 - INFO - Model Accuracy: 0.4879
+2025-03-09 11:53:46 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-09 11:53:46 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-09 11:53:46 - INFO - Model saved as ml/models/AAPL_model.pkl, Scaler saved as ml/scalers/AAPL_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-09 11:53:46 - INFO - [Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Total Current Assets                               1.435660e+11
+Property, Plant & Equipment, Net                   4.371500e+10
+Non-Operating Income (Loss)                       -5.650000e+08
+Number Employees                                   1.470000e+05
+Close                                              1.732300e+02
+Open                                               1.731500e+02
+Short Term Debt                                    1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-09 11:53:46 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-09 11:53:46 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-09 11:53:54 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-09 11:53:54 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-09 11:53:55 - INFO - Model training complete for GOOG.
+2025-03-09 11:53:55 - INFO - Model Accuracy: 0.5202
+2025-03-09 11:53:55 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-09 11:53:55 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-09 11:53:55 - INFO - Model saved as ml/models/GOOG_model.pkl, Scaler saved as ml/scalers/GOOG_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-09 11:53:55 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-09 11:53:55 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-09 11:53:55 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Cash, Cash Equivalents & Short Term Investments', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-09 11:54:09 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-09 11:54:09 - INFO - Best Cross-Validation Score: 0.5500
+2025-03-09 11:54:09 - INFO - Model training complete for AMZN.
+2025-03-09 11:54:09 - INFO - Model Accuracy: 0.5323
+2025-03-09 11:54:09 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.60      0.57       126
+           1       0.53      0.46      0.49       122
+
+    accuracy                           0.53       248
+   macro avg       0.53      0.53      0.53       248
+weighted avg       0.53      0.53      0.53       248
+
+2025-03-09 11:54:09 - INFO - Confusion Matrix:
+[[76 50]
+ [66 56]]
+2025-03-09 11:54:09 - INFO - Model saved as ml/models/AMZN_model.pkl, Scaler saved as ml/scalers/AMZN_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-09 11:54:09 - INFO - [Net Income                                         3.042500e+10
+Income (Loss) from Continuing Operations           3.042500e+10
+Income Tax (Expense) Benefit, Net                 -7.120000e+09
+Cash, Cash Equivalents & Short Term Investments    8.678000e+10
+Low                                                1.719800e+02
+Pretax Income (Loss)                               3.755700e+10
+Pretax Income (Loss), Adj.                         3.755700e+10
+Net Cash from Investing Activities                -4.983300e+10
+Cash from (Repurchase of) Equity                   0.000000e+00
+Open                                               1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-09 11:54:09 - INFO - Prediction for the next day (AMZN): [1]
+2025-03-09 11:54:09 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-09 11:54:17 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 11:54:17 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-09 11:54:17 - INFO - Model training complete for MSFT.
+2025-03-09 11:54:17 - INFO - Model Accuracy: 0.4758
+2025-03-09 11:54:17 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-09 11:54:17 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-09 11:54:17 - INFO - Model saved as ml/models/MSFT_model.pkl, Scaler saved as ml/scalers/MSFT_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-09 11:54:17 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-09 11:54:17 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-09 11:54:17 - INFO - Selected features for NVDA: ['Operating Income (Loss)', 'Number Employees', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Income', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-09 11:54:25 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 11:54:25 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-09 11:54:25 - INFO - Model training complete for NVDA.
+2025-03-09 11:54:25 - INFO - Model Accuracy: 0.5081
+2025-03-09 11:54:25 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-09 11:54:25 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-09 11:54:25 - INFO - Model saved as ml/models/NVDA_model.pkl, Scaler saved as ml/scalers/NVDA_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-09 11:54:25 - INFO - [Operating Income (Loss)                     3.297200e+10
+Number Employees                            1.897500e+04
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Non-Operating Income (Loss)                 8.460000e+08
+Net Income                                  2.976000e+10
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-09 11:54:25 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-09 12:13:05 - INFO - Selected features for AAPL: ['Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property, Plant & Equipment, Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-09 12:13:22 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-09 12:13:22 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-09 12:13:22 - INFO - Model training complete for AAPL.
+2025-03-09 12:13:22 - INFO - Model Accuracy: 0.4879
+2025-03-09 12:13:22 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-09 12:13:22 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-09 12:13:22 - INFO - Model saved as ml/models/AAPL_model.pkl, Scaler saved as ml/scalers/AAPL_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-09 12:13:22 - INFO - [Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Total Current Assets                               1.435660e+11
+Property, Plant & Equipment, Net                   4.371500e+10
+Non-Operating Income (Loss)                       -5.650000e+08
+Number Employees                                   1.470000e+05
+Close                                              1.732300e+02
+Open                                               1.731500e+02
+Short Term Debt                                    1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-09 12:13:22 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-09 12:13:22 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-09 12:13:30 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-09 12:13:30 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-09 12:13:30 - INFO - Model training complete for GOOG.
+2025-03-09 12:13:30 - INFO - Model Accuracy: 0.5202
+2025-03-09 12:13:30 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-09 12:13:30 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-09 12:13:30 - INFO - Model saved as ml/models/GOOG_model.pkl, Scaler saved as ml/scalers/GOOG_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-09 12:13:30 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-09 12:13:30 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-09 12:13:30 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Cash, Cash Equivalents & Short Term Investments', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-09 12:13:45 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-09 12:13:45 - INFO - Best Cross-Validation Score: 0.5500
+2025-03-09 12:13:45 - INFO - Model training complete for AMZN.
+2025-03-09 12:13:45 - INFO - Model Accuracy: 0.5323
+2025-03-09 12:13:45 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.60      0.57       126
+           1       0.53      0.46      0.49       122
+
+    accuracy                           0.53       248
+   macro avg       0.53      0.53      0.53       248
+weighted avg       0.53      0.53      0.53       248
+
+2025-03-09 12:13:45 - INFO - Confusion Matrix:
+[[76 50]
+ [66 56]]
+2025-03-09 12:13:45 - INFO - Model saved as ml/models/AMZN_model.pkl, Scaler saved as ml/scalers/AMZN_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-09 12:13:45 - INFO - [Net Income                                         3.042500e+10
+Income (Loss) from Continuing Operations           3.042500e+10
+Income Tax (Expense) Benefit, Net                 -7.120000e+09
+Cash, Cash Equivalents & Short Term Investments    8.678000e+10
+Low                                                1.719800e+02
+Pretax Income (Loss)                               3.755700e+10
+Pretax Income (Loss), Adj.                         3.755700e+10
+Net Cash from Investing Activities                -4.983300e+10
+Cash from (Repurchase of) Equity                   0.000000e+00
+Open                                               1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-09 12:13:45 - INFO - Prediction for the next day (AMZN): [1]
+2025-03-09 12:13:45 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-09 12:13:53 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 12:13:53 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-09 12:13:53 - INFO - Model training complete for MSFT.
+2025-03-09 12:13:53 - INFO - Model Accuracy: 0.4758
+2025-03-09 12:13:53 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-09 12:13:53 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-09 12:13:53 - INFO - Model saved as ml/models/MSFT_model.pkl, Scaler saved as ml/scalers/MSFT_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-09 12:13:53 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-09 12:13:53 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-09 12:13:53 - INFO - Selected features for NVDA: ['Operating Income (Loss)', 'Number Employees', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Income', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-09 12:14:01 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 12:14:01 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-09 12:14:01 - INFO - Model training complete for NVDA.
+2025-03-09 12:14:01 - INFO - Model Accuracy: 0.5081
+2025-03-09 12:14:01 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-09 12:14:01 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-09 12:14:01 - INFO - Model saved as ml/models/NVDA_model.pkl, Scaler saved as ml/scalers/NVDA_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-09 12:14:01 - INFO - [Operating Income (Loss)                     3.297200e+10
+Number Employees                            1.897500e+04
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Non-Operating Income (Loss)                 8.460000e+08
+Net Income                                  2.976000e+10
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-09 12:14:01 - INFO - Prediction for the next day (NVDA): [0]
+2025-03-09 15:40:03 - INFO - Selected features for AAPL: ['Cash, Cash Equivalents & Short Term Investments', 'Accounts & Notes Receivable', 'Inventories', 'Total Current Assets', 'Property, Plant & Equipment, Net', 'Non-Operating Income (Loss)', 'Number Employees', 'Close', 'Open', 'Short Term Debt']
+2025-03-09 15:40:23 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-03-09 15:40:23 - INFO - Best Cross-Validation Score: 0.5623
+2025-03-09 15:40:23 - INFO - Model training complete for AAPL.
+2025-03-09 15:40:23 - INFO - Model Accuracy: 0.4879
+2025-03-09 15:40:23 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.48      0.52      0.50       122
+           1       0.50      0.45      0.47       126
+
+    accuracy                           0.49       248
+   macro avg       0.49      0.49      0.49       248
+weighted avg       0.49      0.49      0.49       248
+
+2025-03-09 15:40:23 - INFO - Confusion Matrix:
+[[64 58]
+ [69 57]]
+2025-03-09 15:40:23 - INFO - Model saved as ml/models/AAPL_model.pkl, Scaler saved as ml/scalers/AAPL_scaler.pkl, Features saved as ml/features/AAPL_selected_features.json.
+2025-03-09 15:40:23 - INFO - [Cash, Cash Equivalents & Short Term Investments    6.155500e+10
+Accounts & Notes Receivable                        6.090840e+10
+Inventories                                        6.331000e+09
+Total Current Assets                               1.435660e+11
+Property, Plant & Equipment, Net                   4.371500e+10
+Non-Operating Income (Loss)                       -5.650000e+08
+Number Employees                                   1.470000e+05
+Close                                              1.732300e+02
+Open                                               1.731500e+02
+Short Term Debt                                    1.577447e+10
+Name: 1238, dtype: float64]
+2025-03-09 15:40:23 - INFO - Prediction for the next day (AAPL): [1]
+2025-03-09 15:40:23 - INFO - Selected features for GOOG: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Number Employees', 'Net Cash from Investing Activities', 'Net Change in Long Term Investment', 'Change in Other']
+2025-03-09 15:40:32 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-03-09 15:40:32 - INFO - Best Cross-Validation Score: 0.4287
+2025-03-09 15:40:32 - INFO - Model training complete for GOOG.
+2025-03-09 15:40:32 - INFO - Model Accuracy: 0.5202
+2025-03-09 15:40:32 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.65      0.60       137
+           1       0.45      0.36      0.40       111
+
+    accuracy                           0.52       248
+   macro avg       0.51      0.50      0.50       248
+weighted avg       0.51      0.52      0.51       248
+
+2025-03-09 15:40:32 - INFO - Confusion Matrix:
+[[89 48]
+ [71 40]]
+2025-03-09 15:40:32 - INFO - Model saved as ml/models/GOOG_model.pkl, Scaler saved as ml/scalers/GOOG_scaler.pkl, Features saved as ml/features/GOOG_selected_features.json.
+2025-03-09 15:40:32 - INFO - [Net Income                                  7.379500e+10
+Income (Loss) from Continuing Operations    7.379500e+10
+Income Tax (Expense) Benefit, Net          -1.192200e+10
+Pretax Income (Loss)                        8.571700e+10
+Pretax Income (Loss), Adj.                  8.571700e+10
+Non-Operating Income (Loss)                 1.424000e+09
+Number Employees                            1.353010e+05
+Net Cash from Investing Activities         -2.706300e+10
+Net Change in Long Term Investment          6.734000e+09
+Change in Other                             3.324000e+09
+Name: 1238, dtype: float64]
+2025-03-09 15:40:32 - INFO - Prediction for the next day (GOOG): [0]
+2025-03-09 15:40:32 - INFO - Selected features for AMZN: ['Net Income', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Cash, Cash Equivalents & Short Term Investments', 'Low', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Net Cash from Investing Activities', 'Cash from (Repurchase of) Equity', 'Open']
+2025-03-09 15:40:48 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 50}
+2025-03-09 15:40:48 - INFO - Best Cross-Validation Score: 0.5500
+2025-03-09 15:40:48 - INFO - Model training complete for AMZN.
+2025-03-09 15:40:48 - INFO - Model Accuracy: 0.5323
+2025-03-09 15:40:48 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.54      0.60      0.57       126
+           1       0.53      0.46      0.49       122
+
+    accuracy                           0.53       248
+   macro avg       0.53      0.53      0.53       248
+weighted avg       0.53      0.53      0.53       248
+
+2025-03-09 15:40:48 - INFO - Confusion Matrix:
+[[76 50]
+ [66 56]]
+2025-03-09 15:40:49 - INFO - Model saved as ml/models/AMZN_model.pkl, Scaler saved as ml/scalers/AMZN_scaler.pkl, Features saved as ml/features/AMZN_selected_features.json.
+2025-03-09 15:40:49 - INFO - [Net Income                                         3.042500e+10
+Income (Loss) from Continuing Operations           3.042500e+10
+Income Tax (Expense) Benefit, Net                 -7.120000e+09
+Cash, Cash Equivalents & Short Term Investments    8.678000e+10
+Low                                                1.719800e+02
+Pretax Income (Loss)                               3.755700e+10
+Pretax Income (Loss), Adj.                         3.755700e+10
+Net Cash from Investing Activities                -4.983300e+10
+Cash from (Repurchase of) Equity                   0.000000e+00
+Open                                               1.735000e+02
+Name: 1238, dtype: float64]
+2025-03-09 15:40:49 - INFO - Prediction for the next day (AMZN): [1]
+2025-03-09 15:40:49 - INFO - Selected features for MSFT: ['Total Current Assets', 'Inventories', 'Income (Loss) from Continuing Operations', 'Net Income', 'Net Income (Common)', 'Net Income/Starting Line', 'Payables & Accruals', 'Net Cash from Operating Activities', 'Cash from (Repurchase of) Equity', 'Net Cash from Acquisitions & Divestitures']
+2025-03-09 15:40:57 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 15:40:57 - INFO - Best Cross-Validation Score: 0.4997
+2025-03-09 15:40:58 - INFO - Model training complete for MSFT.
+2025-03-09 15:40:58 - INFO - Model Accuracy: 0.4758
+2025-03-09 15:40:58 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.56      0.50       117
+           1       0.50      0.40      0.44       131
+
+    accuracy                           0.48       248
+   macro avg       0.48      0.48      0.47       248
+weighted avg       0.48      0.48      0.47       248
+
+2025-03-09 15:40:58 - INFO - Confusion Matrix:
+[[66 51]
+ [79 52]]
+2025-03-09 15:40:58 - INFO - Model saved as ml/models/MSFT_model.pkl, Scaler saved as ml/scalers/MSFT_scaler.pkl, Features saved as ml/features/MSFT_selected_features.json.
+2025-03-09 15:40:58 - INFO - [Total Current Assets                         1.842570e+11
+Inventories                                  2.500000e+09
+Income (Loss) from Continuing Operations     7.236100e+10
+Net Income                                   7.236100e+10
+Net Income (Common)                          7.236100e+10
+Net Income/Starting Line                     7.236100e+10
+Payables & Accruals                          2.220688e+10
+Net Cash from Operating Activities           8.758200e+10
+Cash from (Repurchase of) Equity            -2.037900e+10
+Net Cash from Acquisitions & Divestitures   -1.670000e+09
+Name: 1238, dtype: float64]
+2025-03-09 15:40:58 - INFO - Prediction for the next day (MSFT): [0]
+2025-03-09 15:40:58 - INFO - Selected features for NVDA: ['Operating Income (Loss)', 'Number Employees', 'Income (Loss) from Continuing Operations', 'Income Tax (Expense) Benefit, Net', 'Pretax Income (Loss)', 'Pretax Income (Loss), Adj.', 'Non-Operating Income (Loss)', 'Net Income', 'Net Change in Long Term Investment', 'Non-Cash Items']
+2025-03-09 15:41:07 - INFO - Best Parameters: {'bootstrap': True, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-03-09 15:41:07 - INFO - Best Cross-Validation Score: 0.5142
+2025-03-09 15:41:07 - INFO - Model training complete for NVDA.
+2025-03-09 15:41:07 - INFO - Model Accuracy: 0.5081
+2025-03-09 15:41:07 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.52      0.59      0.55       127
+           1       0.50      0.42      0.46       121
+
+    accuracy                           0.51       248
+   macro avg       0.51      0.51      0.50       248
+weighted avg       0.51      0.51      0.50       248
+
+2025-03-09 15:41:07 - INFO - Confusion Matrix:
+[[75 52]
+ [70 51]]
+2025-03-09 15:41:07 - INFO - Model saved as ml/models/NVDA_model.pkl, Scaler saved as ml/scalers/NVDA_scaler.pkl, Features saved as ml/features/NVDA_selected_features.json.
+2025-03-09 15:41:07 - INFO - [Operating Income (Loss)                     3.297200e+10
+Number Employees                            1.897500e+04
+Income (Loss) from Continuing Operations    2.976000e+10
+Income Tax (Expense) Benefit, Net          -4.058000e+09
+Pretax Income (Loss)                        3.381800e+10
+Pretax Income (Loss), Adj.                  3.381800e+10
+Non-Operating Income (Loss)                 8.460000e+08
+Net Income                                  2.976000e+10
+Net Change in Long Term Investment         -9.290000e+09
+Non-Cash Items                              5.440000e+08
+Name: 1238, dtype: float64]
+2025-03-09 15:41:07 - INFO - Prediction for the next day (NVDA): [0]

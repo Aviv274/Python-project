@@ -50,8 +50,8 @@ class StockPricePredictor:
             os.makedirs(self.scalers_directory, exist_ok=True)
             
             feature_file = f"{self.features_directory}/{self.stock_name}_selected_features.json"
-            model_path = f"{self.models_directory}/{self.stock_name}_logistic_regression_model.pkl"
-            scaler_path = f"{self.scalers_directory}/{self.stock_name}_logistic_scaler.pkl"
+            model_path = f"{self.models_directory}/{self.stock_name}_model.pkl"
+            scaler_path = f"{self.scalers_directory}/{self.stock_name}_scaler.pkl"
             
             joblib.dump(self.model, model_path)
             joblib.dump(self.scaler, scaler_path)
@@ -64,9 +64,9 @@ class StockPricePredictor:
     
     def load_model(self):
         """Load the trained model, scaler, and selected features."""
-        model_path = f"models/{self.stock_name}_logistic_regression_model.pkl"
-        scaler_path = f"scalers/{self.stock_name}_scaler.pkl"
-        feature_file = f"models/{self.stock_name}_selected_features.json"
+        model_path = f"{self.models_directory}/{self.stock_name}_model.pkl"
+        scaler_path = f"{self.scalers_directory}/{self.stock_name}_scaler.pkl"
+        feature_file = f"{self.features_directory}/{self.stock_name}_selected_features.json"
 
         self.model = joblib.load(model_path)
         self.scaler = joblib.load(scaler_path)
