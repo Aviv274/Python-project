@@ -5,6 +5,8 @@ from livepredictor.Livepredictor import LivePredictor
 def configure_global_logging(file_path):
     """Sets up logging for the main process using config."""
     logging.basicConfig(
+        filename=file_path,
+        filemode="a",
         format="%(asctime)s - %(levelname)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         level=logging.INFO
@@ -50,3 +52,6 @@ if st.sidebar.button("Fetch Data"):
                 st.warning("No data available for the selected date range.")
         
                 
+        except Exception as e:
+            st.error(f"Error fetching data: {e}")
+
