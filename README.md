@@ -65,9 +65,9 @@ streamlit run Streamlit/app.py
 - **Yahoo Finance** for market data
 
 ## Authors & Contributions
-- ETL: [Group 6]
-- ML Model: [Group 6]
-- Streamlit App: [Group 6]
+- ETL: [Your Name]
+- ML Model: [Your Name]
+- Streamlit App: [Your Name]
 
 ## License
 This project is licensed under the MIT License.
