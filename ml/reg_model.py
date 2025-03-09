@@ -125,7 +125,7 @@ class LogisticRegrModel(StockPricePredictor):
             X_new = pd.DataFrame(X_new, columns=self.selected_features)
 
         # Select only the stored features
-        X_new = X_new[self.selected_features]
+        X_new = X_new[self.scaler.feature_names_in_]
 
         # Scale the data
         X_new_scaled = self.scaler.transform(X_new)
