@@ -12,7 +12,7 @@ def configure_global_logging(file_path):
         level=logging.INFO
     )
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)  # Ensure logging level is applied
+    logger.setLevel(logging.INFO)
     return logger
 
 # Streamlit App
@@ -30,7 +30,6 @@ end_date = st.sidebar.date_input("Select End Date")
 
 if st.sidebar.button("Fetch Data"):
     with st.spinner("Fetching data..."):
-        try:
             # Initialize the LivePredictor
             predictor = LivePredictor(
                 api_key="339da715-7249-4c7b-9e0e-a30eef1fdf6b",
@@ -50,8 +49,3 @@ if st.sidebar.button("Fetch Data"):
                     st.error("🔽 SELL Signal")
             else:
                 st.warning("No data available for the selected date range.")
-        
-                
-        except Exception as e:
-            st.error(f"Error fetching data: {e}")
-
