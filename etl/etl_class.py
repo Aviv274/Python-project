@@ -12,16 +12,6 @@ sf.set_api_key('339da715-7249-4c7b-9e0e-a30eef1fdf6b')
 sf.set_data_dir('etl/simfin_data/')
 
 class StockETL:
-    """
-    ETL pipeline for processing stock financial data.
-
-    Attributes:
-        logger (logging.Logger): Logger instance for recording events.
-        config_path (str): Path to the configuration file. Defaults to 'etl/config.json'.
-        config (dict): Dictionary holding the configuration settings.
-        data_folder (str): Path to the folder containing raw data files.
-        clean_folder (str): Path to the folder where cleaned data will be saved.
-    """
 
     def __init__(self, config_path="etl/config.json", logger=None):
         """
@@ -40,9 +30,11 @@ class StockETL:
         self.logger = logger
         self.config_path = config_path
         self.config = self.load_config()
+        #TODO: Load and validate configuration settings here.
         self.data_folder = str(self.config.get("data_folder"))
         self.clean_folder = str(self.config.get("clean_folder"))
         self.output_folder = str(self.config.get("output_folder"))
+        #TODO: creaye output directory if it doesn't exist.
         os.makedirs(self.clean_folder, exist_ok=True)
         self.logger.info("StockETL instance initialized.")
 
@@ -59,7 +51,7 @@ class StockETL:
 
         try:
             with open(self.config_path, 'r') as file:
-                return json.load(file) or {}
+                return json.load(file)
         except json.JSONDecodeError:
             self.logger.error("Failed to load config.json. Using default settings.")
             return {}
@@ -117,6 +109,7 @@ class StockETL:
             # Remove completely empty columns (redundant check after drop)
             df.dropna(axis=1, how="all", inplace=True)
 
+            # Remove duplicate rows
             return df.drop_duplicates()
         
         except Exception:
@@ -233,6 +226,7 @@ class StockETL:
             df (pd.DataFrame): DataFrame to be saved.
             filename (str): Name of the output CSV file.
         """
+        #TODO; Delete after createrating in the constructor
         os.makedirs(self.output_folder, exist_ok=True)
         filepath = os.path.join(self.output_folder, filename)
         df.to_csv(filepath, index=False)
@@ -283,6 +277,7 @@ def main():
     """
     Runs the ETL process for multiple stocks.
     """
+    #Change to import from global file 
     logger = configure_global_logging()
     logger.info("Starting ETL process.")
 
@@ -309,6 +304,7 @@ def main():
         df_cashflow = etl.clean_data(df_cashflow, cashflow_methods)
         df_company = etl.clean_data(df_company, company_methods)
 
+        #TODO: countion the CR
         df_merged = etl.merge_data(df_prices, df_income, df_balance, df_cashflow, df_company, ticker)
         if df_merged is None:
             logger.warning(f"Skipping {ticker} due to failed merge.")
