@@ -1,8 +1,6 @@
 import json
-from datetime import datetime, timedelta
 import pandas as pd
 pd.set_option('future.no_silent_downcasting', True)
-from sklearn.preprocessing import StandardScaler
 import sys
 import os
 from .Wrapper import PySimFin
@@ -59,7 +57,6 @@ class LivePredictor:
             # Extract the last reported fiscal period for each year
             bs_df = df_sorted.drop_duplicates(subset=["Fiscal Year"], keep="first")
             bs_df = self.rename_columns_to_model(bs_df,"livepredictor/mapping.json")
-            bs_df.to_csv("MSFT_bs_df.csv")
 
             cf_df = self.simfin.get_financial_statement(ticker, "cf", start_date, end_date)
             cf_df = cf_df[cf_df["Fiscal Period"] == "FY"]
