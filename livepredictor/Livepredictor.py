@@ -6,8 +6,8 @@ from sklearn.preprocessing import StandardScaler
 import sys
 import os
 from .Wrapper import PySimFin
-from ml.reg_model import LogisticRegrModel,load_config
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from ml.reg_model import LogisticRegrModel,load_config
 from etl.etl_class import StockETL
 
 class LivePredictor:
