@@ -42,7 +42,7 @@ class LivePredictor:
             pl_df = self.simfin.get_financial_statement(ticker, "pl", start_date, end_date)
             
             if pl_df.empty:
-                start_date = f"{int(start_date.split("-")[0])-1}-01-01"
+                start_date = f"{int(start_date.split("-")[0])-5}-01-01"
                 pl_df = self.simfin.get_financial_statement(ticker, "pl", start_date, end_date)    
 
             pl_df = pl_df[pl_df["Fiscal Period"] == "FY"]
