@@ -52,11 +52,6 @@ class LogisticRegrModel(StockPricePredictor):
         top_indices = np.argsort(coef_abs)[-self.top_features:]
         self.selected_features = feature_candidates[top_indices].tolist()
 
-        # Save selected features to a file
-        feature_file = f"{self.features_directory}/{self.stock_name}_selected_features.json"
-        with open(feature_file, "w") as f:
-            json.dump(self.selected_features, f)
-
         self.logger.info(f"Selected features for {self.stock_name}: {self.selected_features}")
         return self.df[self.selected_features], self.df['Target']
 
@@ -126,7 +121,6 @@ class LogisticRegrModel(StockPricePredictor):
 
         # Select only the stored features
         X_new = X_new[self.scaler.feature_names_in_]
-
         # Scale the data
         X_new_scaled = self.scaler.transform(X_new)
 

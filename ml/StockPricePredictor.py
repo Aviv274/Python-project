@@ -15,7 +15,6 @@ class StockPricePredictor:
         # Directories for saving models and scalers
         self.models_directory = config["models_directory"]
         self.scalers_directory = config["scalers_directory"]
-        self.features_directory = config["features_directory"]
         self.columns_to_drop = list(config["columns_to_drop"])
         self.df = pd.read_csv(self.file_path)
         self.test_size = config["test_size"]
@@ -43,39 +42,29 @@ class StockPricePredictor:
 
     
     def save_model(self):
-            """Save the trained model, scaler, and selected features with stock name."""
+            """Save the trained model and scaler with stock name."""
             # Ensure directories exist
-            os.makedirs(self.features_directory, exist_ok=True)
             os.makedirs(self.models_directory, exist_ok=True)
             os.makedirs(self.scalers_directory, exist_ok=True)
             
-            feature_file = f"{self.features_directory}/{self.stock_name}_selected_features.json"
             model_path = f"{self.models_directory}/{self.stock_name}_model.pkl"
             scaler_path = f"{self.scalers_directory}/{self.stock_name}_scaler.pkl"
             
             joblib.dump(self.model, model_path)
             joblib.dump(self.scaler, scaler_path)
             
-            with open(feature_file, "w") as f:
-                json.dump(self.selected_features, f)
-            
-            self.logger.info(f"Model saved as {model_path}, Scaler saved as {scaler_path}, Features saved as {feature_file}.")
+            self.logger.info(f"Model saved as {model_path}, Scaler saved as {scaler_path}.")
 
     
     def load_model(self):
-        """Load the trained model, scaler, and selected features."""
+        """Load the trained model, scaler."""
         model_path = f"{self.models_directory}/{self.stock_name}_model.pkl"
         scaler_path = f"{self.scalers_directory}/{self.stock_name}_scaler.pkl"
-        feature_file = f"{self.features_directory}/{self.stock_name}_selected_features.json"
 
         self.model = joblib.load(model_path)
         self.scaler = joblib.load(scaler_path)
 
-        # Load selected features
-        with open(feature_file, "r") as f:
-            self.selected_features = json.load(f)
-
-        self.logger.info(f"Model, scaler, and selected features for {self.stock_name} loaded successfully.")
+        self.logger.info(f"Model and scaler for {self.stock_name} loaded successfully.")
 
 
 def load_config(config_path):
