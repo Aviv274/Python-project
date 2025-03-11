@@ -42,7 +42,8 @@
       "Net Cash from Investing Activities": "fill",
       "Net Cash from Financing Activities": "fill",
       "Cash from (Repurchase of) Equity": "zero",
-      "Dividends Paid":"fill"
+      "Dividends Paid":"fill",
+      "Net Cash from Acquisitions & Divestitures":"drop"
     },
 
     "company_cleaning_methods": {
