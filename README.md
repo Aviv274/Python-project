@@ -1,74 +1,67 @@
-# Stock Market Data Analysis & Machine Learning
+# README: Stock Prediction System
 
-This project includes an **ETL pipeline** for stock market data processing, a **machine learning model** for financial predictions, and a **Streamlit-based interactive app** for visualizing stock trends and predictions.
+## Overview
+This project consists of an ETL pipeline, a machine learning model, and a live predictor module for stock price forecasting. The system relies on configuration and mapping files to customize data processing and model execution.
 
-## Project Structure
+## Configuration Files
+The system includes multiple configuration files that allow users to adjust parameters without modifying the source code.
 
-```
-/etl
-    ├── etl_class.py       # ETL pipeline script
-    ├── config.json        # Configuration file
-    ├── stock_data/        # Raw stock data (CSV files)
-    ├── simfin_data/       # Downloaded financial datasets
-    ├── clean/             # Processed & cleaned data
-/ml
-    ├── reg_model.py       # Machine learning model script
-    ├── config_ml.json     # ML configuration file
-    ├── scalers/           # Pre-trained scalers
-    ├── features/          # Selected features (JSON files)
-    ├── models/            # Trained ML models
-/Streamlit
-    ├── Wrapper.py         # Streamlit app wrapper
-    ├── Livepredictor.py   # Live stock price prediction script
-    ├── mapping.json       # Configuration mapping
-```
+### 1. ETL Configuration (`etl/config.json`)
+This file contains settings for the ETL (Extract, Transform, Load) pipeline.
 
-## Installation
+#### **Key Parameters:**
+- **data_sources**: Defines locations of stock market data (e.g., balance sheets, cash flow, income statements, and share prices).
+- **output_path**: Specifies the directory where cleaned and processed data is stored.
+- **logging_level**: Configures the logging level (INFO, DEBUG, etc.).
+- **date_range**: Defines the start and end dates for data extraction.
 
-Ensure you have Python installed (recommended version: 3.8+). Install dependencies using:
+#### **How to Use:**
+Modify the values in `config.json` to point to the correct data sources or change logging verbosity. The ETL pipeline will read this file when executed (`etl/run_etl.py`).
 
-```sh
-pip install -r requirements.txt
-```
+### 2. Machine Learning Configuration (`ml/config_ml.json`)
+This file contains settings for training and running machine learning models.
 
-## How It Works
+#### **Key Parameters:**
+- **model_type**: Specifies the type of model (e.g., Linear Regression, ARIMA, etc.).
+- **features**: Lists the input features for training the model.
+- **train_test_split_ratio**: Defines the proportion of training vs. test data.
+- **output_model_path**: Specifies where trained models are saved.
 
-### 1. Extract, Transform, Load (ETL)
-- **Extracts** stock market data from CSV and APIs.
-- **Transforms** data (cleaning, feature selection, merging financial metrics).
-- **Loads** processed data into structured formats for analysis.
+#### **How to Use:**
+Adjust `config_ml.json` to modify the machine learning model’s behavior. The script `ml/run_ml.py` will read this file when training or making predictions.
 
-Run the ETL pipeline:
-```sh
-python etl/etl_class.py
-```
+## Mapping File
 
-### 2. Machine Learning Model
-- Trains models to predict stock price trends.
-- Uses logistic regression and feature selection techniques.
+### 3. Live Predictor Mapping (`livepredictor/mapping.json`)
+This file maps stock tickers to company names and other metadata used by the live prediction module.
 
-Run the ML model:
-```sh
-python ml/reg_model.py
+#### **Key Parameters:**
+- **tickers**: A dictionary mapping stock ticker symbols (e.g., "AAPL") to full company names.
+- **exchange**: Specifies the stock exchange (e.g., NASDAQ, NYSE).
+- **data_source**: Defines where to fetch real-time stock data.
+
+#### **How to Use:**
+Modify `mapping.json` to add or update stock tickers. The live predictor (`livepredictor/Livepredictor.py`) will read this file when running stock forecasts in real-time.
+
+## Running the System
+
+### 1. Running the ETL Pipeline
+```bash
+python etl/run_etl.py
 ```
 
-### 3. Streamlit Dashboard
-- Visualizes stock data and predictions interactively.
-
-Launch the Streamlit app:
-```sh
-streamlit run Streamlit/app.py
+### 2. Training the Machine Learning Model
+```bash
+python ml/run_ml.py
 ```
 
-## Dataset Sources
-- **SimFin** for fundamental stock data
-- **Yahoo Finance** for market data
+### 3. Running Live Stock Predictions
+```bash
+python livepredictor/Livepredictor.py
+```
 
-## Authors & Contributions
-- ETL: [Your Name]
-- ML Model: [Your Name]
-- Streamlit App: [Your Name]
+Ensure that the configuration and mapping files are correctly set up before executing the scripts. Modifications to these files allow customization without altering code.
 
-## License
-This project is licensed under the MIT License.
+## Contact
+For any issues or questions, please refer to the project documentation or contact the development team.
 
