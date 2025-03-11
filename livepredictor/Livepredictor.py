@@ -4,7 +4,8 @@ pd.set_option('future.no_silent_downcasting', True)
 import sys
 import os
 from .Wrapper import PySimFin
-from ml.reg_model import LogisticRegrModel,load_config
+from ml.reg_model import LogisticRegrModel
+from ml.StockPricePredictor import load_config
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from etl.etl_class import StockETL
 
@@ -38,29 +39,9 @@ class LivePredictor:
             if prices_df.empty:
                 return None
             prices_df = self.rename_columns_to_model(prices_df,"livepredictor/mapping.json")
-            # Fetch financial statements
-            pl_df = self.simfin.get_financial_statement(ticker, "pl", start_date, end_date)
-            
-            if pl_df.empty:
-                start_date = f"{int(start_date.split("-")[0])-5}-01-01"
-                pl_df = self.simfin.get_financial_statement(ticker, "pl", start_date, end_date)    
-
-            pl_df = pl_df[pl_df["Fiscal Period"] == "FY"]
-            pl_df = self.rename_columns_to_model(pl_df,"livepredictor/mapping.json")
-            
-            bs_df = self.simfin.get_financial_statement(ticker, "bs", start_date, end_date)
-            # Ensure Fiscal Year is numeric
-            bs_df["Fiscal Year"] = pd.to_numeric(bs_df["Fiscal Year"], errors="coerce")
-
-            # Sort by Fiscal Year (ascending) and Fiscal Period (descending) to get the latest quarter first
-            df_sorted = bs_df.sort_values(by=["Fiscal Year", "Fiscal Period"], ascending=[True, False])
-            # Extract the last reported fiscal period for each year
-            bs_df = df_sorted.drop_duplicates(subset=["Fiscal Year"], keep="first")
-            bs_df = self.rename_columns_to_model(bs_df,"livepredictor/mapping.json")
-
-            cf_df = self.simfin.get_financial_statement(ticker, "cf", start_date, end_date)
-            cf_df = cf_df[cf_df["Fiscal Period"] == "FY"]
-            cf_df = self.rename_columns_to_model(cf_df,"livepredictor/mapping.json")
+            pl_df = self.fixing_missing_years(ticker,"pl",start_date,end_date)
+            bs_df = self.fixing_missing_years(ticker,"bs",start_date,end_date)
+            cf_df = self.fixing_missing_years(ticker,"cf",start_date,end_date)
 
             # Fetch company info
             company_info_df = self.simfin.get_company_info(ticker)
@@ -84,7 +65,79 @@ class LivePredictor:
             return df_merged
         except Exception as e:
             self.logger.error(f"Error fetching data for {ticker}: {e}")
-        raise
+            raise
+
+    def fixing_missing_years(self,ticker: str,statement:str, start_date: str,end_date) -> pd.DataFrame:
+        """
+        Fixes missing years in the specified financial statement for the given ticker.
+
+        Args:
+            ticker (str): The stock ticker symbol.
+            statement (str): The financial statement to fix ("pl", "bs", "cf").
+            start_date (str): The start date for fetching financial statements.
+            end_date (str): The end date for fetching financial statements.
+
+        Returns:
+            pd.DataFrame: The updated DataFrame with fixed missing years.
+        """
+        
+        # Fetch financial statements
+        df = self.simfin.get_financial_statement(ticker, statement, start_date, end_date)
+            
+        if df.empty:
+            df = self.simfin.get_financial_statement(ticker, statement, f"{int(start_date.split("-")[0])-2}-01-01", end_date)
+           
+        if statement == "pl":
+            df = df[df["Fiscal Period"] == "FY"]
+        else:
+            # Ensure Fiscal Year is numeric
+            df["Fiscal Year"] = pd.to_numeric(df["Fiscal Year"], errors="coerce")
+            # Sort by Fiscal Year (ascending) and Fiscal Period (descending) to get the latest quarter first
+            df_sorted = df.sort_values(by=["Fiscal Year", "Fiscal Period"], ascending=[True, False])
+            # Extract the last reported fiscal period for each year
+            df = df_sorted.drop_duplicates(subset=["Fiscal Year"], keep="first")
+
+
+        df = self.rename_columns_to_model(df,"livepredictor/mapping.json")
+        df = self.ensure_latest_fiscal_year(df,start_date)
+        return df
+
+
+
+    def ensure_latest_fiscal_year(self,df: pd.DataFrame, start_year:str) -> pd.DataFrame:
+        """
+        Ensures that the DataFrame has data for at least `start_year`.
+        If the last available fiscal year is lower than `start_year`, a new row is added with `start_year`.
+
+        Parameters:
+            df (pd.DataFrame): The input DataFrame containing a "Fiscal Year" column.
+            start_year (int): The desired starting fiscal year.
+
+        Returns:
+            pd.DataFrame: The updated DataFrame.
+        """
+        if df.empty:
+            return df  # Return empty if no data
+
+        # Ensure Fiscal Year is numeric
+        df["Fiscal Year"] = pd.to_numeric(df["Fiscal Year"], errors="coerce")
+
+        # Sort by Fiscal Year (ascending) and Fiscal Period (descending)
+        df_sorted = df.sort_values(by=["Fiscal Year", "Fiscal Period"], ascending=[True, False])
+
+        # Keep the latest fiscal period for each year
+        df_sorted = df_sorted.drop_duplicates(subset=["Fiscal Year"], keep="first")
+
+        # Check the last available fiscal year
+        last_fiscal_year = df_sorted["Fiscal Year"].max()
+
+        start_year = int(start_year.split("-")[0])
+        if last_fiscal_year < start_year:
+            last_row = df_sorted.iloc[-1].copy()
+            last_row["Fiscal Year"] = start_year  # Update year to match start date
+            df_sorted = pd.concat([df_sorted, last_row.to_frame().T], ignore_index=True)
+
+        return df_sorted
 
     def predict_next_day(self, ticker: str, start_date: str, end_date: str) -> str:
         """

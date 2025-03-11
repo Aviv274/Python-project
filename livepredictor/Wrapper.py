@@ -23,6 +23,10 @@ class PySimFin:
     def __init__(self, api_key: str, logger: logging.Logger):
         """
         Constructor to initialize API interaction.
+
+        Args:
+            api_key (str): API key for authentication.
+            logger (logging.Logger): Logger instance for logging.
         """
         self.base_url = "https://backend.simfin.com/api/v3/"
         self.headers = {"Authorization": f"{api_key}"}
@@ -32,6 +36,14 @@ class PySimFin:
     def get_share_prices(self, ticker: str, start: str, end: str) -> pd.DataFrame:
         """
         Retrieve share prices for a given ticker within a specific time range.
+
+        Args:
+            ticker (str): Stock ticker symbol.
+            start (str): Start date in 'YYYY-MM-DD' format.
+            end (str): End date in 'YYYY-MM-DD' format.
+
+        Returns:
+            pd.DataFrame: DataFrame containing share price data.
         """
         try:
             url = f"{self.base_url}companies/prices/verbose"
@@ -58,14 +70,22 @@ class PySimFin:
             self.logger.error(f"Unexpected error: {e}")
             raise
 
-    def get_financial_statement(self, ticker: str, statements: str, start: str, end: str) -> list:
+    def get_financial_statement(self, ticker: str, statements: str, start: str, end: str) -> pd.DataFrame:
         """
         Retrieve financial statements for a given ticker within a specific time range.
-        If no data is available, return an empty list.
+
+        Args:
+            ticker (str): Stock ticker symbol.
+            statements (str): Type of financial statement (e.g., 'income', 'balance', 'cashflow').
+            start (str): Start date in 'YYYY-MM-DD' format.
+            end (str): End date in 'YYYY-MM-DD' format.
+
+        Returns:
+            pd.DataFrame: DataFrame containing financial statement data.
         """
         try:
             url = f"{self.base_url}companies/statements/verbose"
-            params = {"ticker": ticker, "start": start, "end": end, "statements": statements}
+            params = {"ticker": ticker, "statements": statements, "start": start, "end": end}
             self.logger.info(f"Fetching financial statements {statements} for {ticker} from {start} to {end}.")
 
             response = requests.get(url, headers=self.headers, params=params)
@@ -90,6 +110,12 @@ class PySimFin:
     def get_company_info(self, ticker: str) -> pd.DataFrame:
         """
         Retrieve general company information based on the ticker symbol.
+
+        Args:
+            ticker (str): Stock ticker symbol.
+
+        Returns:
+            pd.DataFrame: DataFrame containing company information.
         """
         try:
             url = f"{self.base_url}companies/general/verbose"
