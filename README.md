@@ -57,7 +57,7 @@ python ml/run_ml.py
 
 ### 3. Running Live Stock Predictions
 ```bash
-python livepredictor/Livepredictor.py
+streamlit run Stock predictor.py
 ```
 
 Ensure that the configuration and mapping files are correctly set up before executing the scripts. Modifications to these files allow customization without altering code.
