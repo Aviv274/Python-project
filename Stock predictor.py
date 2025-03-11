@@ -1,6 +1,7 @@
 import streamlit as st
 import logging
 from livepredictor.Livepredictor import LivePredictor
+from streamlit_cookie_banner import cookie_banner
 
 def configure_global_logging(file_path):
     """Sets up logging for the main process using config."""
@@ -12,13 +13,11 @@ def configure_global_logging(file_path):
         level=logging.INFO
     )
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.INFO)  # Ensure logging level is applied
     return logger
 
 # Streamlit App
 logger = configure_global_logging("app.log")
-st.title("Automated Daily Trading System")
-
 # Sidebar for stock selection
 st.sidebar.header("Stock Selection")
 
@@ -49,3 +48,6 @@ if st.sidebar.button("Fetch Data"):
                     st.error("🔽 SELL Signal")
             else:
                 st.warning("No data available for the selected date range.")
+        
+            
+
