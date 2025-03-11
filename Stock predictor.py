@@ -1,7 +1,6 @@
 import streamlit as st
 import logging
 from livepredictor.Livepredictor import LivePredictor
-from streamlit_cookie_banner import cookie_banner
 
 def configure_global_logging(file_path):
     """Sets up logging for the main process using config."""
