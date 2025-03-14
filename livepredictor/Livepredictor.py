@@ -82,10 +82,12 @@ class LivePredictor:
         """
         
         # Fetch financial statements
-        df = self.simfin.get_financial_statement(ticker, statement, start_date, end_date)
-            
-        if df.empty:
+        try:
+            df = self.simfin.get_financial_statement(ticker, statement, start_date, end_date)
+        
+        except Exception as e:
             df = self.simfin.get_financial_statement(ticker, statement, f"{int(start_date.split("-")[0])-2}-01-01", end_date)
+            self.logger.error(f"Error fetching financial statement for {ticker}: {e}")
            
         if statement == "pl":
             df = df[df["Fiscal Period"] == "FY"]
