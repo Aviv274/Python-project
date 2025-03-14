@@ -702,7 +702,7 @@ def page3():
                 else:
                     final_value = buy_and_hold_strategy(stock_data, initial_cash, profit_target)
                 # Calculate profit/loss
-                profit_or_loss = final_value - initial_cash
+                profit_or_loss = round(final_value - initial_cash,2)
                 profit_color = "#E57373" if profit_or_loss < 0 else "#81C784"  # Red if loss, Green if profit
                 result_word = "profit" if profit_or_loss > 0 else "loss"  # Switch between "profit" and "loss"
                 recommendation = f"If you play this strategy, you will have a **{result_word} of ${abs(profit_or_loss):,.2f}**."
@@ -783,11 +783,32 @@ def page3():
 
                 st.write(" ")
 
-                if profit_or_loss > 0:
-                    st.success(f"🟢 {recommendation} We **recommend** you do this! 🚀")
-                else:
-                    st.error(f"🔴 {recommendation} We **do NOT recommend** doing this. ⚠️")
-                    
+                if strategy == "Buy-and-Sell":
+                    if profit_or_loss > 0:
+                        st.success(f"🟢 With this strategy, you will have a **profit** of **${abs(profit_or_loss):,.2f}**. We **recommend** you do this! 🚀")
+                    else:
+                        st.error(f"🔴 With this strategy, you will have a **loss** of **${abs(profit_or_loss):,.2f}**. We **do NOT recommend** doing this. ⚠️")
+                else:  # Buy-and-Hold Strategy
+                    if profit_or_loss > profit_target:
+                        st.success(f"🟢 With this strategy, you will **exceed** your profit target of **${profit_target:,.2f}**. Your total profit will be **${abs(profit_or_loss):,.2f}**. We **recommend** you do this! 🚀")
+                    elif profit_or_loss == profit_target:
+                        st.success(f"🟢 With this strategy, you will **exactly** reach your profit target of **${profit_target:,.2f}**. We **recommend** you do this! 🚀")
+                    else:
+                        st.markdown(f"""
+                        <div style="
+                            background-color: #FDEDED;
+                            padding: 12px;
+                            border-radius: 8px;
+                            text-align: center;
+                            font-size: 16px;
+                            font-weight: normal;
+                            color: #D32F2F;">
+                            🔴 With this strategy, you will <b>NOT</b> reach your profit target of <b>${profit_target:,.2f}</b>.  
+                            Instead, you will have a <b>{result_word}</b> of <b>${abs(profit_or_loss):,.2f}</b>.  
+                            <br>We <b>do NOT recommend</b> doing this. ⚠️
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
             else:
                 st.error("No data available for the selected date range. Please try again.")
             
