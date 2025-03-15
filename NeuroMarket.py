@@ -8,7 +8,6 @@ from livepredictor.Livepredictor import LivePredictor
 import requests
 from livepredictor.Wrapper import PySimFin
 import plotly.express as px
-import plotly.graph_objects as go
 
 #Logging Configuring
 
@@ -73,9 +72,6 @@ def buy_and_sell(df, predictions, initial_cash):
             holdings = 0
 
     final_value = cash + (holdings * df["Close"].iloc[-1])
-    #st.write(f"Initial Cash: ${initial_cash:,.2f}")
-    #st.write(f"Final Portfolio Value: ${final_value:,.2f}")
-    #st.write(f"Profit: ${final_value - initial_cash:,.2f}")
 
     return final_value
 
@@ -99,16 +95,25 @@ def buy_and_hold_strategy(df, initial_cash, profit_target):
     final_value = cash + (holdings * df["Close"].iloc[-1])
     profit = final_value - initial_cash
 
-    #st.write(f"Initial Cash: ${initial_cash:,.2f}")
-    #st.write(f"Final Portfolio Value: ${final_value:,.2f}")
-    #st.write(f"Profit: ${profit:,.2f}")
-    
-    #if profit >= profit_target:
-      #  st.success(f"Congratulations! You have exceeded your profit target of ${profit_target:,.2f}.")
-    #else:
-      #  st.warning(f"You did not reach your profit target. Your profit was ${profit:,.2f}, which is ${profit_target - profit:,.2f} below the goal.")
-
     return final_value 
+
+#We create a cache to speed up the data retrieval and avoid too many API calls
+
+    #Predictor
+@st.cache_resource
+def get_py():
+    return PySimFin("339da715-7249-4c7b-9e0e-a30eef1fdf6b", configure_global_logging("temp.log"))
+    
+    #Stock Data Cache
+@st.cache_data(ttl=600) #10 minute cache
+def cache_stock_data(_predictor, ticker, start, end):
+    return _predictor.get_share_prices(ticker, start, end)
+    
+    #Financial Statements
+@st.cache_data(ttl=600) #10 minute cache
+def cache_financial_data(_predictor, ticker, start, end):
+    return _predictor.get_financial_statement(ticker, "pl",start, end)
+ 
 
 #Define pages content
 
@@ -422,8 +427,8 @@ def page2():
                 #Historical data section
                 try:
                     #Retrieve live historical data
-                    py = PySimFin("339da715-7249-4c7b-9e0e-a30eef1fdf6b", configure_global_logging("temp.log"))
-                    stock_data = py.get_share_prices(selected_ticker, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
+                    py = get_py()
+                    stock_data = cache_stock_data(py, selected_ticker, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
 
                     if not stock_data.empty:
                         
@@ -500,15 +505,15 @@ def page2():
                             
                             # Remove gridlines and improve aesthetics
                             fig.update_xaxes(
-                                showgrid=False,  # Removes vertical gridlines
-                                rangeslider_visible=True,  # Adds a range slider for better interaction
-                                title_font=dict(size=14, family="Arial", color="black"),  # Makes axis titles clearer
+                                showgrid=False, 
+                                rangeslider_visible=True,  # Adds a range slider 
+                                title_font=dict(size=14, family="Arial", color="black"), 
                                 tickfont=dict(size=12, family="Arial", color="black")
                             )
 
                             fig.update_yaxes(
-                                showgrid=False,  # Removes horizontal gridlines
-                                title_font=dict(size=14, family="Arial", color="black"),  # Custom font for Y-axis
+                                showgrid=False, 
+                                title_font=dict(size=14, family="Arial", color="black"), 
                                 tickfont=dict(size=12, family="Arial", color="black")
                             )
 
@@ -517,11 +522,11 @@ def page2():
                                 title=dict(
                                     text=f"{selected_ticker} Stock Price Trend",
                                     font=dict(size=18, family="Arial"), 
-                                    x=0,  # Centers the title
+                                    x=0,
                                 ),
-                                plot_bgcolor="white",  # Keeps background clean
-                                margin=dict(l=20, r=20, t=40, b=20),  # Adjust margins for a compact layout
-                                hovermode="x unified"  # Improves hover interaction
+                                plot_bgcolor="white", 
+                                margin=dict(l=20, r=20, t=40, b=20),  
+                                hovermode="x unified"  
                             )
 
                             st.plotly_chart(fig)
@@ -529,7 +534,7 @@ def page2():
 
                         #Table Display in Streamlit
                         with col2:
-                            st.markdown("##### 📊 Latest Stock Data")  # Smaller title
+                            st.markdown("##### 📊 Latest Stock Data")
                             st.write(stock_data.tail(10))
 
                         # Get Financial Statements
@@ -542,9 +547,7 @@ def page2():
                                 try:
                                     
                                     # Fetch financial statements and store in session state
-                                    st.session_state.financial_data = py.get_financial_statement(
-                                        selected_ticker, "pl", start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")
-                                    )
+                                    st.session_state.financial_data = cache_financial_data(py, selected_ticker, "pl", start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
 
                                     if not st.session_state.financial_data.empty:
                                         st.success(f"✅ Financial data retrieved for {selected_ticker}")
@@ -704,12 +707,12 @@ def page3():
                 # Calculate profit/loss
                 profit_or_loss = round(final_value - initial_cash,2)
                 profit_color = "#E57373" if profit_or_loss < 0 else "#81C784"  # Red if loss, Green if profit
-                result_word = "profit" if profit_or_loss > 0 else "loss"  # Switch between "profit" and "loss"
+                result_word = "profit" if profit_or_loss > 0 else "loss"
                 recommendation = f"If you play this strategy, you will have a **{result_word} of ${abs(profit_or_loss):,.2f}**."
 
                 st.markdown("---") 
 
-                # Display the results in three equal columns
+                # Display the results 
                 col1, col2, col3 = st.columns(3)
                 
                 # Initial Cash Box
@@ -758,7 +761,7 @@ def page3():
                         </div>
                     """, unsafe_allow_html=True)
 
-                # Profit or Loss Box (Color Changes Dynamically)
+                # Profit or Loss Box
                 with col3:
                     st.markdown("""
                         <div style="
@@ -825,7 +828,12 @@ pages = [
 
 current_page = st.navigation(pages=pages, position="hidden")
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="NeuroMarket",  # Change this to your platform name
+    page_icon="Logo_icon.png",  # Path to your logo
+    layout="wide"
+)
 
 num_cols = max(len(pages) + 1, 8)
 
