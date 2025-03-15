@@ -157,7 +157,7 @@ def page1():
     col1,col2,col3, col4, col5 = st.columns(5)
 
     with col1:
-        st.image("Aviv.png")
+        st.image("images/Aviv.png")
         
         st.markdown("""
             <div style="display: flex; justify-content: center; text-align: center;">
@@ -181,7 +181,7 @@ def page1():
         """, unsafe_allow_html=True)
 
     with col2:
-        st.image("Mohammed.png")
+        st.image("images/Mohammed.png")
      
         st.markdown("""
             <div style="display: flex; justify-content: center; text-align: center;">
@@ -205,7 +205,7 @@ def page1():
         """, unsafe_allow_html=True)
 
     with col3:
-        st.image("Guille.png")
+        st.image("images/Guille.png")
         
         st.markdown("""
             <div style="display: flex; justify-content: center; text-align: center;">
@@ -229,7 +229,7 @@ def page1():
         """, unsafe_allow_html=True)
 
     with col4:
-        st.image("Fatine.png")
+        st.image("images/Fatine.png")
 
         st.markdown("""
             <div style="display: flex; justify-content: center; text-align: center;">
@@ -253,7 +253,7 @@ def page1():
         """, unsafe_allow_html=True)
     
     with col5:
-        st.image("Camila.png")
+        st.image("images/Camila.png")
         
         st.markdown("""
             <div style="display: flex; justify-content: center; text-align: center;">
@@ -547,7 +547,7 @@ def page2():
                                 try:
                                     
                                     # Fetch financial statements and store in session state
-                                    st.session_state.financial_data = cache_financial_data(py, selected_ticker, "pl", start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
+                                    st.session_state.financial_data = cache_financial_data(py, selected_ticker, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
 
                                     if not st.session_state.financial_data.empty:
                                         st.success(f"✅ Financial data retrieved for {selected_ticker}")
@@ -828,10 +828,9 @@ pages = [
 
 current_page = st.navigation(pages=pages, position="hidden")
 
-#st.set_page_config(layout="wide")
 st.set_page_config(
-    page_title="NeuroMarket",  # Change this to your platform name
-    page_icon="Logo_icon.png",  # Path to your logo
+    page_title="NeuroMarket", 
+    page_icon="images/Logo_icon.png",  
     layout="wide"
 )
 
@@ -840,7 +839,7 @@ num_cols = max(len(pages) + 1, 8)
 columns = st.columns(num_cols, vertical_alignment="bottom")
 
 #Add logo
-columns[0].image("Full_logo.png", width=500)
+columns[0].image("images/Full_logo.png", width=500)
 
 for col, page in zip(columns[1:], pages):
     col.page_link(page, icon=page.icon)
